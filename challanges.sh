@@ -93,7 +93,35 @@ if ! validSession ;then
     login $( urlEncode $CTF_USER ) $( urlEncode $CTF_PASS )
 fi
 
+# submit 16 CT18-N23W-RKD0-ZS2O-XCEP
 #dumpChalls
 #dumpFiles2
 
-#submit 16 CT18-N23W-RKD0-ZS2O-XCEP
+# The Eventlog<br>(2<sup>nd</sup> Round) id:1
+# The Colonel<br>(2<sup>nd</sup> Round) id:2
+# Sixth Element<br>(2<sup>nd</sup> Round) id:4
+# The Access Validator<br>(2<sup>nd</sup> Round) id:5
+# Tracing the Traveler<br>(2<sup>nd</sup> Round) id:6
+# The Targets<br>(2<sup>nd</sup> Round) id:9
+# The Process<br>(2<sup>nd</sup> Round) id:11
+# The Real Cloud<br>(2<sup>nd</sup> Round) id:13
+# Cookie 2 <br>(2<sup>nd</sup> Round) id:25
+
+# cat public/data/sample.json | jq .[] | jq 'select(.name | contains("2<sup>"))' | jq '. | .name + " id:" + (.id | tostring)' | tr -d \"
+
+## CHALS round 2
+
+# submit 2 CT18-hpWx-uGVM-pyLS-F6DX # The Colonel
+# submit 13 CT18-s8G7-o8Ks-0YUX-3feT # The Real Cloud
+# submit 4 CT18-bBMe-A8cF-tqMD-6d8Z # Sixth Element
+# submit 5 CT18-twaH-QCXG-Bt0V-xCU5 # The Access Validator
+# submit 1 CT18-QnTK-50Uq-vQ5o-jAS5 # The Eventlog
+# submit 9 CT18-TCrp-se9H-OKa9-7jI3 # The Targets
+
+# Traveller:
+# submit 6 CT18-7Uiz-VZrd-EhOy-MJWd # Tracing the Traveler
+
+# Alternatively:
+# submit 6 CT18-7Uiz-VZrd-FhOy-MJWd # Tracing the Traveler
+# submit 6 CT18-7Ulz-VZrd-EhOy-MJWd # Tracing the Traveler
+# submit 6 CT18-7Ulz-VZrd-FhOy-MJWd # Tracing the Traveler
