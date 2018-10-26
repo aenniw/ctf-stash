@@ -76,17 +76,13 @@ def decrypt(data, key):
 
 	return "".join(encoded)
 
-class ClassName(object):
-	"""docstring for ClassName"""
-	def __init__(self, arg):
-		super(ClassName, self).__init__()
-		self.arg = arg
+# data = 'dilosamochvalisvehotvurce'
+# key = 'pondeli'
 
-
-coded = encrypt(data,key)
-print coded
-print decrypt(coded,key)
-print data
+# coded = encrypt(data,key)
+# print coded
+# print decrypt(coded,key)
+# print data
 
 # CT18-hpWx-uGVM-pyLS-F6DX
 

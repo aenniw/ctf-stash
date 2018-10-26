@@ -2,8 +2,8 @@
 
 function to-char() { printf "\\$(printf '%03o' "$1")"; }
 
-for c in `cat ../public/data/message.txt | \
-		while read l; do 
+for c in `cat ../../../public/data/message.txt | \
+		while read l; do
 			lat=${l%%N*}
 			lon=${l%%E*}; lon=${lon##*\ }
 
