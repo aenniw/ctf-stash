@@ -1,4 +1,0 @@
-https://gchq.github.io/CyberChef/#recipe=From_Base58('123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz',true)&input=NzkxOGRrY3VnWmRyblRGdzVDWDJ1dlYxRmpaQjV4MkU0
-
-result:
-CT18-iQhS-PkSx-RhjY-31B1
