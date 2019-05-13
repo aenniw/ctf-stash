@@ -1,5 +1,5 @@
 # CTF-Stash
-![Build Status]()
+[![Build Status](https://travis-ci.org/aenniw/ctf-stash.svg?branch=master)](https://travis-ci.org/aenniw/ctf-stash)
 
 ## Building locally
 

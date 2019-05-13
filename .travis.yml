@@ -8,13 +8,13 @@ install:
   - gitbook install
 
 script:
-  - gitbook build . docs
+  - gitbook build
 
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: ./docs/
+  local_dir: ./_book/
   on:
     branch: master
