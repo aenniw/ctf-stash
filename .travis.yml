@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - 10
+
+install:
+  - npm install gitbook-cli
+  - gitbook fetch 3.2.3
+  - gitbook install
+
+script:
+  - gitbook build . public
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: ./_book/
+  on:
+    branch: master
