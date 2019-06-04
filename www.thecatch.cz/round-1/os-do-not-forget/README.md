@@ -6,11 +6,31 @@ Agent, thanks to our VEAL Team Six we have secured a device containing enemy int
 
 #### Solution:
 
+[suse.profile.zip](./suse-4.12.14-lp150.12.16-default.zip)
+
 ```bash
 unlzma ./memory.tar.lzma
-echo "volatility"
+tar xopf ./memory.tar
+# BOOT_IMAGE=/boot/vmlinuz-4.12.14-lp150.12.16-d
+strings memory | grep -e "^BOOT_IMAGE=/boot" | sort | uniq
+# SUSE Linux
+strings memory | grep "Linux version" | sort | uniq
+# suserelease=openSUSE Leap 15.0
+strings memory | grep -i  "suserelease" | sort | uniq
+
+# Create volatility profile see:
+#
+#   https://github.com/volatilityfoundation/volatility/wiki/Linux#creating-a-new-profile
+#   https://www.evild3ad.com/3610/creating-volatility-linux-profiles-opensuse/
+
+cp suse-4.12.14-lp150.12.16-default.zip /usr/lib/python2.7/dist-packages/volatility/plugins/overlays/linux
+volatility --info | grep "Profile" | grep "Linux" | grep "SUSE"
+
+volatility -f memory --profile=LinuxOpenSUSE-15x64 linux_find_file -F "/home/flab/flag.txt"
+volatility -f memory --profile=LinuxOpenSUSE-15x64 linux_find_file -i 0xffff880018fcec98 -O flag.txt
 ```
 
+cat ./flag.txt
 ---
 
 <details><summary>FLAG:</summary>

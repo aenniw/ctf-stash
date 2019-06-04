@@ -1,6 +1,6 @@
 #### Challenge:
 
-ATTENTION: THE FILE HAS BEEN CHANGED, DOWNLOAD NEW FILE springpeace.zip Agent, 'M' has received an email from Elbonia regarding peace conference scheduled for the next spring. Her antivirus didn't detect anything dangerous, but as she's a complete paranoiac, she requires you to investigate the attached document. Pw for the zipfile:infected This message will self destruct in about 4 weeks! [springpeace.zip](./springpeace.zip)
+Agent, 'M' has received an email from Elbonia regarding peace conference scheduled for the next spring. Her antivirus didn't detect anything dangerous, but as she's a complete paranoiac, she requires you to investigate the attached document. Pw for the zipfile:infected This message will self destruct in about 4 weeks! [springpeace.zip](./springpeace.zip)
 
 ---
 
