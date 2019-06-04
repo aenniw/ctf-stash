@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, we have obtained a network traffic capture, which was recorded at enemy headquarter. At that time, one of the foreign agents (we suppose it was agent "Mc Pew") connect his device to the network. Analyze the traffic and try to find any useful information. Good luck Agent, [dhcp.pcap.gz](./dhcp.pcap.gz)
+Agent, we have obtained a network traffic capture, which was recorded at enemy headquarter. At that time, one of the foreign agents (we suppose it was agent "Mc Pew") connect his device to the network. Analyze the traffic and try to find any useful information. Good luck Agent, [dhcp.pcap.gz](./dhcp.pcap.gz ':ignore')
 
 ---
 

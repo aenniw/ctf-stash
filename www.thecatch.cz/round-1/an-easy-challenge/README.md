@@ -1,6 +1,6 @@
 #### Challenge:
 
-This morning we got an anonymous tip - somebody dropped a USB drive into our mailbox without any additional information. The drive contained a single file. Your fellow agents have analyzed the rest of the drive and haven't found anything suspicious. Is this a red herring or could this mysterious file lead us somewhere? Our Crypto team suggested we put You on the case. Agent, do your best! [Groups.xml](./Groups.xml)
+This morning we got an anonymous tip - somebody dropped a USB drive into our mailbox without any additional information. The drive contained a single file. Your fellow agents have analyzed the rest of the drive and haven't found anything suspicious. Is this a red herring or could this mysterious file lead us somewhere? Our Crypto team suggested we put You on the case. Agent, do your best! [Groups.xml](./Groups.xml ':ignore')
 
 ---
 

@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, a list of coordinates was quietly downloaded from car navigation, which belongs to agent "Traveler". Our psychotronic department believes that some message is encoded in it. Try to find it. Good luck, [message.txt](./message.txt)
+Agent, a list of coordinates was quietly downloaded from car navigation, which belongs to agent "Traveler". Our psychotronic department believes that some message is encoded in it. Try to find it. Good luck, [message.txt](./message.txt ':ignore')
 
 ---
 
@@ -16,7 +16,6 @@ for c in `cat message.txt | \
 			lat=${l%%N*}
 			lon=${l%%E*}; lon=${lon##*\ }
 
-			# echo "https://en.mapy.cz/whereami?lon=${lon}&lat=${lat}&zoom=18"
 			curl "https://en.mapy.cz/whereami?lon=${lon}&lat=${lat}&zoom=18" \
 				2> /dev/null | jq .poi.title | grep -o -P '(?<=/).*(?=,)' | tr -d , | awk '{ print $1 }'
 		done`; do
