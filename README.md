@@ -8,6 +8,12 @@ To work locally with this project, you'll have to follow the steps below:
 1. Install Docsify `npm install docsify-cli -g`
 1. Preview your project: `docsify serve`
 
+## CTF dumps
+
+```bash
+python3 ./ctf-dump.py
+```
+
 ## Docsify documentation
 
 [Github](https://github.com/docsifyjs/docsify/)
