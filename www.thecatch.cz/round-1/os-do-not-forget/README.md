@@ -28,9 +28,9 @@ volatility --info | grep "Profile" | grep "Linux" | grep "SUSE"
 
 volatility -f memory --profile=LinuxOpenSUSE-15x64 linux_find_file -F "/home/flab/flag.txt"
 volatility -f memory --profile=LinuxOpenSUSE-15x64 linux_find_file -i 0xffff880018fcec98 -O flag.txt
+cat ./flag.txt
 ```
 
-cat ./flag.txt
 ---
 
 <details><summary>FLAG:</summary>
