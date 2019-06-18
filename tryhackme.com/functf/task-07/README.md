@@ -1,4 +1,4 @@
-## [Task 7] Shift please
+## Shift please
 
 Shifting alphabets is so much fun.
 Note: All the answers in this category are case sensitive. Also you only need to submit the flag and not the complete text.

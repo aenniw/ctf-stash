@@ -29,6 +29,7 @@ python3 ./ctf-dump.py
 # CTF Competitions
 
 - ## [try2hack.me](./try2hack.me/README.md)
+- ## [tryhackme.com](./tryhackme.com/README.md)
 - ## [thecatch.cz](https://www.thecatch.cz)
   - [Practice Challenges](./www.thecatch.cz/round-0/README.md)
   - [Round - 1](./www.thecatch.cz/round-1/README.md)

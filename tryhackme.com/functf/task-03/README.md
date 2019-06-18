@@ -1,6 +1,6 @@
-## [Task 3] F*(u+BPD!g
+## F*(u+BPD!g
 
-You know the drill, focus on the Title. [hide.jpg](./hide.jpg)
+You know the drill, focus on the Title. [hide.jpg](./hide.jpg ':ignore')
 
 [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Base85('!-u')&input=RioodStCUEQhZw)
 

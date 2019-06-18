@@ -1,6 +1,6 @@
-## [Task 1] Basics
+## Basics
 
-No matter what the challenge always starts with the basics. [Basic.jpg](./Basic.jpg)
+No matter what the challenge always starts with the basics. [Basic.jpg](./Basic.jpg ':ignore')
 You need to find the flag in the format tryhackme{}
 
 ### Do images have strings?
