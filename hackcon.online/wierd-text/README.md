@@ -6,10 +6,11 @@ Someone sent me this file ([mysterious.txt](./mysterious.txt ':ignore')) .It con
 
 #### Solution:
 
-https://en.wikipedia.org/wiki/Esoteric_programming_language
+https://en.wikipedia.org/wiki/Brainfuck
+https://en.wikipedia.org/wiki/Esoteric_programming_language#Malbolge
 
 ```bash
-# branfuck          | malbolge | reverse chars
+# branfuck          | malbolge | decode hex | reverse chars
 bf ./mysterious.txt | malbolge | xxd -r -p | tac -r -s 'x\|[^x]'
 ```
 
