@@ -18,6 +18,26 @@
 
 [Secret Agent](./secret-agent/README.md ':include')
 
+# Stego
+
+## GIMP IT
+
+[GIMP IT](./gimp-it/README.md ':include')
+
+## Small icon much wow
+
+[Small icon much wow](./small-icon-much-wow/README.md ':include')
+
+## Too cold for steg
+
+[Too cold for steg](./too-cold-for-steg/README.md ':include')
+
+# Forensics
+
+## GIFe me time
+
+[GIFe me time](./gife-me-time/README.md ':include')
+
 # Misc
 
 ## Invisible Programming
