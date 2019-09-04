@@ -11,6 +11,8 @@ Edit: the flag format is slightly different [q1.py](./q1.py ':ignore')
 
 #### Solution:
 
+[Rabin_cryptosystem](https://en.wikipedia.org/wiki/Rabin_cryptosystem) [modular_sqrt.py](https://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python)
+
 ```python
 #!/bin/pyhton
 
