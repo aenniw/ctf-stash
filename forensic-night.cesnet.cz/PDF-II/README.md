@@ -1,6 +1,6 @@
 #### Challenge:
 
-Jak v PDF opravit chybu? Snadno! [pdf2.pdf.gz](./pdf2.pdf.gz ':ignore')
+Jak v PDF opravit chybu? Snadno! [pdf2.pdf.gz](./pdf2.pdf.gz ":ignore")
 
 ---
 

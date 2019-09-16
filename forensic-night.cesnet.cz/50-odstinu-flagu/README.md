@@ -1,6 +1,6 @@
 #### Challenge:
 
-Nalezněte tajnou zprávu špiona-zelenáče. [50_odstinu_flagu.png.gz](./50_odstinu_flagu.png.gz ':ignore')
+Nalezněte tajnou zprávu špiona-zelenáče. [50_odstinu_flagu.png.gz](./50_odstinu_flagu.png.gz ":ignore")
 
 ---
 

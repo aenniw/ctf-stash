@@ -1,6 +1,6 @@
 #### Challenge:
 
-Someone sent me this file ([mysterious.txt](./mysterious.txt ':ignore')) .It contains only ><+-.,[] symbols and no other letters or numbers.
+Someone sent me this file ([mysterious.txt](./mysterious.txt ":ignore")) .It contains only ><+-.,[] symbols and no other letters or numbers.
 
 ---
 

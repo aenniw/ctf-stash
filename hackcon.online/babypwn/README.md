@@ -1,12 +1,12 @@
 #### Challenge:
 
-You don't need eip control for every pwn. [q2](./q2 ':ignore') Service : `nc 68.183.158.95 8990`
+You don't need eip control for every pwn. [q2](./q2 ":ignore") Service : `nc 68.183.158.95 8990`
 
 ---
 
 #### Solution:
 
-![disassembly.png](./disassembly.png ':ignore')
+![disassembly.png](./disassembly.png ":ignore")
 
 ```console
 (gdb) print win

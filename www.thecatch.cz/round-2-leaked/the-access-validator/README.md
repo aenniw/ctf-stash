@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, the access to secret datacenter is protected by hardware terminal requiring password. We have acquired the code used by this terminal by social engineering. Try to find out if the password can be retrieved from the code. Hurry, Agent [access_validator.vbs](./access_validator.vbs ':ignore')
+Agent, the access to secret datacenter is protected by hardware terminal requiring password. We have acquired the code used by this terminal by social engineering. Try to find out if the password can be retrieved from the code. Hurry, Agent [access_validator.vbs](./access_validator.vbs ":ignore")
 
 ---
 

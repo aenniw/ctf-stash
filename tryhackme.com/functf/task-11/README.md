@@ -1,6 +1,6 @@
 ## Morse Code
 
-Morse code is being used for a very long time. And since then there has been a lot of versions like using your eyebrows, flashing torches, tapping etc. [morse.txt](./morse.txt ':ignore')
+Morse code is being used for a very long time. And since then there has been a lot of versions like using your eyebrows, flashing torches, tapping etc. [morse.txt](./morse.txt ":ignore")
 
 ```python
 #!/usr/bin/env python3

@@ -8,31 +8,31 @@
 
 ### The Colonel
 
-[The Colonel](./the-colonel/README.md ':include')
+[The Colonel](./the-colonel/README.md ":include")
 
 ## Stego
 
 ### Tracing the Traveler
 
-[Tracing the Traveler](./tracing-the-traveler/README.md ':include')
+[Tracing the Traveler](./tracing-the-traveler/README.md ":include")
 
 ### The Targets
 
-[The Targets](./the-targets/README.md ':include')
+[The Targets](./the-targets/README.md ":include")
 
 ## System
 
 ### The Real Cloud
 
-[The Real Cloud](./the-real-cloud/README.md ':include')
+[The Real Cloud](./the-real-cloud/README.md ":include")
 
 ### The Eventlog
 
-[The Eventlog](./the-eventlog/README.md ':include')
+[The Eventlog](./the-eventlog/README.md ":include")
 
 ### Sixth Element
 
-[Sixth Element](./sixth-element/README.md ':include')
+[Sixth Element](./sixth-element/README.md ":include")
 
 ### The Process
 
@@ -44,7 +44,7 @@ Agent, this is a mission of the upmost importance! Thanks to a badly configured 
 
 ### The Access Validator
 
-[The Access Validator](./the-access-validator/README.md ':include')
+[The Access Validator](./the-access-validator/README.md ":include")
 
 ## Web
 

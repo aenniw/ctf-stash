@@ -1,12 +1,12 @@
 #### Challenge:
 
-Is this really a C program? [hello_world.cpp](./hello_world.cpp ':ignore')
+Is this really a C program? [hello_world.cpp](./hello_world.cpp ":ignore")
 
 ---
 
 #### Solution:
 
-Inspect white characters in [hello_world.cpp](./hello_world.cpp ':ignore'), decode `'\t' => 1`, `' ' => 0 ` (lines with actual code needs to be fixed as they contains additional `' '`)
+Inspect white characters in [hello_world.cpp](./hello_world.cpp ":ignore"), decode `'\t' => 1`, `' ' => 0 ` (lines with actual code needs to be fixed as they contains additional `' '`)
 
 ```python
 #!/bin/python

@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, a list of coordinates was quietly downloaded from car navigation, which belongs to agent "Traveler". Our psychotronic department believes that some message is encoded in it. Try to find it. Good luck, [message.txt](./message.txt ':ignore')
+Agent, a list of coordinates was quietly downloaded from car navigation, which belongs to agent "Traveler". Our psychotronic department believes that some message is encoded in it. Try to find it. Good luck, [message.txt](./message.txt ":ignore")
 
 ---
 

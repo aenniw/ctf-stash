@@ -1,6 +1,6 @@
 #### Challenge:
 
-CESNET ve svém logu místo černé používá raději #0068A2, ale to je skoro stejné. [black_and_white.png.gz](./black_and_white.png.gz ':ignore')
+CESNET ve svém logu místo černé používá raději #0068A2, ale to je skoro stejné. [black_and_white.png.gz](./black_and_white.png.gz ":ignore")
 
 ---
 

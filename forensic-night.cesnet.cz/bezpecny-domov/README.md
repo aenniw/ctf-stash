@@ -1,6 +1,6 @@
 #### Challenge:
 
-Přístupový kód do chytrého domu (smart-bio-eko-house) je ověřován v přilloženém programu. Zjistěte, zda návrhář neudělal nějakou chybu, která umožní kód získat. [validator.vbs.gz](./validator.vbs.gz ':ignore')
+Přístupový kód do chytrého domu (smart-bio-eko-house) je ověřován v přilloženém programu. Zjistěte, zda návrhář neudělal nějakou chybu, která umožní kód získat. [validator.vbs.gz](./validator.vbs.gz ":ignore")
 
 ---
 

@@ -8,20 +8,20 @@
 
 ### The Smile of CESNET
 
-[The Smile of CESNET](./the-smile-of-cesnet/README.md ':include')
+[The Smile of CESNET](./the-smile-of-cesnet/README.md ":include")
 
 ## Crypto
 
 ### Almost OK
 
-[Almost OK](./almost-ok/README.md ':include')
+[Almost OK](./almost-ok/README.md ":include")
 
 ## Others
 
 ### Numbers
 
-[Numbers](./numbers/README.md ':include')
+[Numbers](./numbers/README.md ":include")
 
 ### Hash
 
-[Hash](./hash/README.md ':include')
+[Hash](./hash/README.md ":include")

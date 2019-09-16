@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, we have intercepted an e-mail containing strange image (a line of black&white pixels) and a short text saying "The Smile of CESNET". Find the hidden message. Good luck, Agent [message.png](./message.png ':ignore')
+Agent, we have intercepted an e-mail containing strange image (a line of black&white pixels) and a short text saying "The Smile of CESNET". Find the hidden message. Good luck, Agent [message.png](./message.png ":ignore")
 
 ---
 

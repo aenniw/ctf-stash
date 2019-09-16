@@ -1,6 +1,6 @@
 #### Challenge:
 
-Opravdu kvalitní obrázek. [flag.bmp.gz](./flag.bmp.gz ':ignore')
+Opravdu kvalitní obrázek. [flag.bmp.gz](./flag.bmp.gz ":ignore")
 
 ---
 

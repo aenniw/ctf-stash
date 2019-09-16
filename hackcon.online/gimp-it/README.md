@@ -1,6 +1,6 @@
 #### Challenge:
 
-One of my logo designer left his job in the middle and hide my flag in it.Help me to get the flag. [stego1.xcf](./stego1.xcf ':ignore')
+One of my logo designer left his job in the middle and hide my flag in it.Help me to get the flag. [stego1.xcf](./stego1.xcf ":ignore")
 
 ---
 

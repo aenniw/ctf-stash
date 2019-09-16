@@ -1,6 +1,6 @@
 #### Challenge:
 
-The challenge name is enough for you to solve it. Everything you need is present in the text file. [final.txt](./final.txt ':ignore')
+The challenge name is enough for you to solve it. Everything you need is present in the text file. [final.txt](./final.txt ":ignore")
 
 ---
 

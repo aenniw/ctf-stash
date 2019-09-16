@@ -1,6 +1,6 @@
 #### Challenge:
 
-Prostě jen rozbalte archiv a přečtěte si obsah tajného souboru flag.txt. To by mělo být snadné, ne? [coze_jake_heslo.zip.gz](./coze_jake_heslo.zip.gz ':ignore')
+Prostě jen rozbalte archiv a přečtěte si obsah tajného souboru flag.txt. To by mělo být snadné, ne? [coze_jake_heslo.zip.gz](./coze_jake_heslo.zip.gz ":ignore")
 
 ---
 

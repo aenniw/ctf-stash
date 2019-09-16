@@ -1,6 +1,6 @@
 #### Challenge:
 
-Pozorování oblaků letících po obloze je ukliďnující, ale jen do doby než zjistíte, že se v nich skrývá hledaný flag. [clouds.mp4.gz](./clouds.mp4.gz ':ignore')
+Pozorování oblaků letících po obloze je ukliďnující, ale jen do doby než zjistíte, že se v nich skrývá hledaný flag. [clouds.mp4.gz](./clouds.mp4.gz ":ignore")
 
 ---
 

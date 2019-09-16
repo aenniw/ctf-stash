@@ -1,6 +1,6 @@
 #### Challenge:
 
-Analyzujte datový soubor proprietární aplikace, kterou už nelze sehnat. Porozumět způsobu ukládání dat by se docela hodilo, ať už je v souboru uloženo cokoliv. [file.dat.gz](./file.dat.gz ':ignore')
+Analyzujte datový soubor proprietární aplikace, kterou už nelze sehnat. Porozumět způsobu ukládání dat by se docela hodilo, ať už je v souboru uloženo cokoliv. [file.dat.gz](./file.dat.gz ":ignore")
 
 ---
 

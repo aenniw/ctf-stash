@@ -1,6 +1,6 @@
 #### Challenge:
 
-V logu je zachycena podeřelá aktivita. Prozkoumejte ji a zjistěte, co bylo jejím cílem. [server.log.gz](./server.log.gz ':ignore')
+V logu je zachycena podeřelá aktivita. Prozkoumejte ji a zjistěte, co bylo jejím cílem. [server.log.gz](./server.log.gz ":ignore")
 
 ---
 

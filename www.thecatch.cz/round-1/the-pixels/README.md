@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, we found a secret message in target's apartment. It looks like random pixels, but it reminds me something. Can you help us decode this? Best of luck, we relies on you Agent! [Pixels.png](./Pixels.png ':ignore')
+Agent, we found a secret message in target's apartment. It looks like random pixels, but it reminds me something. Can you help us decode this? Best of luck, we relies on you Agent! [Pixels.png](./Pixels.png ":ignore")
 
 ---
 

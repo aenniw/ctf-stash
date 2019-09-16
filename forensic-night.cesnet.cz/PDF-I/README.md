@@ -1,6 +1,6 @@
 #### Challenge:
 
-Soubory PDF mohou obsahovat užitečná data nejen v zobrazeném obsahu. [pdf1.pdf.gz](./pdf1.pdf.gz ':ignore')
+Soubory PDF mohou obsahovat užitečná data nejen v zobrazeném obsahu. [pdf1.pdf.gz](./pdf1.pdf.gz ":ignore")
 
 ---
 

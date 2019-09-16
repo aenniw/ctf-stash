@@ -1,12 +1,12 @@
 #### Challenge:
 
-It's a b0f , Can't be easier than that. [q1](./q1 ':ignore') Service : `nc 68.183.158.95 8989`
+It's a b0f , Can't be easier than that. [q1](./q1 ":ignore") Service : `nc 68.183.158.95 8989`
 
 ---
 
 #### Solution:
 
-![disassembly.png](./disassembly.png ':ignore')
+![disassembly.png](./disassembly.png ":ignore")
 
 ```console
 (gdb) set disassembly-flavor intel

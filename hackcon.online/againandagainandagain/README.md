@@ -5,7 +5,7 @@ Someone was thinking encrypting again and again helps, prove them wrong.
 ```
 c = 196353764385075548782571270052469419021844481625366305056739966550926484027148967165867708531585849658610359148759560853
 ```
-Edit: the flag format is slightly different [q1.py](./q1.py ':ignore')
+Edit: the flag format is slightly different [q1.py](./q1.py ":ignore")
 
 ---
 

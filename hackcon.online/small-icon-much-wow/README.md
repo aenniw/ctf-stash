@@ -1,6 +1,6 @@
 #### Challenge:
 
-One of my friends like to hide data in images.Help me to find out the secret in image. [stego.jpg](./stego.jpg ':ignore')
+One of my friends like to hide data in images.Help me to find out the secret in image. [stego.jpg](./stego.jpg ":ignore")
 
 ---
 

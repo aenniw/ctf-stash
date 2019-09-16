@@ -1,6 +1,6 @@
 #### Challenge:
 
-Náš systémový administrátor má tušení, že použitý SSH server obsahuje backdoor. Můžete jej v přiloženém kódu najít? Když se vám to podaří, ověřte jej v praxi a získejte přístup na tento server: `ssh ctf@forensic-night.cesnet.cz -p 20002` [dropbear-2019.78-backdoored.tar.gz](./dropbear-2019.78-backdoored.tar.gz ':ignore')
+Náš systémový administrátor má tušení, že použitý SSH server obsahuje backdoor. Můžete jej v přiloženém kódu najít? Když se vám to podaří, ověřte jej v praxi a získejte přístup na tento server: `ssh ctf@forensic-night.cesnet.cz -p 20002` [dropbear-2019.78-backdoored.tar.gz](./dropbear-2019.78-backdoored.tar.gz ":ignore")
 
 ---
 

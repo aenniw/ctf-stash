@@ -1,6 +1,6 @@
 #### Challenge:
 
-Bruh, do you even read books, lol? Then solve this: `++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>++++++++++++++++++++.<++++++++++++++++++++++++.<++++++++++++++++++++++.-------.++++++.--.+++.>>.<.<-.--------.+++++++.+++++..------.>>.<.<+.-----.++++++++++.++.----.-.>>.<<---------.++++++++++++.----.-.--.+++++++++++++.-------------.` [file1.txt](./file1.txt ':ignore') [file2.txt](./file2.txt ':ignore') [desc.txt](./desc.txt ':ignore')
+Bruh, do you even read books, lol? Then solve this: `++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>>++++++++++++++++++++.<++++++++++++++++++++++++.<++++++++++++++++++++++.-------.++++++.--.+++.>>.<.<-.--------.+++++++.+++++..------.>>.<.<+.-----.++++++++++.++.----.-.>>.<<---------.++++++++++++.----.-.--.+++++++++++++.-------------.` [file1.txt](./file1.txt ":ignore") [file2.txt](./file2.txt ":ignore") [desc.txt](./desc.txt ":ignore")
 
 ---
 
@@ -13,7 +13,7 @@ cat ./file2.txt | sed 's/!/!\n\nx = 0, y = 0, rule = B3\/S23\n/g'
 
 Import and check candidates in https://copy.sh/life/
 
-![life.png](./life.png ':ignore')
+![life.png](./life.png ":ignore")
 
 ```bash
 echo 'YmFiZWw=' | base64 -d     # google to https://libraryofbabel.info

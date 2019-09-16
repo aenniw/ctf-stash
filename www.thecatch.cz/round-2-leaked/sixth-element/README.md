@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, the "Nth element" is codename used by foreign agent for some kind of secret data transfer. Today, we have caught the courier and seize a drive labeled `Sixth Element`. Download the image, analyze it and get the secret message. _ URL: [https://owncloud.cesnet.cz/index.php/s/Itkz1zbREfBt4QJ](./the_sixth_element.dd.gz ':ignore') _ Password: `the_sixth_element` Good luck, Agent
+Agent, the "Nth element" is codename used by foreign agent for some kind of secret data transfer. Today, we have caught the courier and seize a drive labeled `Sixth Element`. Download the image, analyze it and get the secret message. _ URL: [https://owncloud.cesnet.cz/index.php/s/Itkz1zbREfBt4QJ](./the_sixth_element.dd.gz ":ignore") _ Password: `the_sixth_element` Good luck, Agent
 
 ---
 

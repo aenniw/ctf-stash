@@ -1,6 +1,6 @@
 ## Walk the bin out
 
-I can make this easy just by telling you the tool or maybe you can read the title again and figure out your self. [walk.jpg](./walk.jpg ':ignore')
+I can make this easy just by telling you the tool or maybe you can read the title again and figure out your self. [walk.jpg](./walk.jpg ":ignore")
 P.S - It's a very famous, open source tool :)
 
 ```bash

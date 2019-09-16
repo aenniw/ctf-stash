@@ -1,6 +1,6 @@
 #### Challenge:
 
-Agent, the attached message has been detected during border control and copied for further analysis. The border clerk supposes it is list of targets of terrorist attack, but most of the GPS coordinates point to abandoned places, oceans, etc. Analyze the message and try to find its sense (probably hiding a message). Good luck, Agent [targets.txt](./targets.txt ':ignore')
+Agent, the attached message has been detected during border control and copied for further analysis. The border clerk supposes it is list of targets of terrorist attack, but most of the GPS coordinates point to abandoned places, oceans, etc. Analyze the message and try to find its sense (probably hiding a message). Good luck, Agent [targets.txt](./targets.txt ":ignore")
 
 ---
 
