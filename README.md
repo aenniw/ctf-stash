@@ -13,6 +13,7 @@
 - ### [hackcon.online](./hackcon.online/README.md)
 - ### [forensic-night.cesnet.cz](./forensic-night.cesnet.cz/README.md)
 - ### [ctf.dragonsector.pl](./ctf.dragonsector.pl/README.md)
+- ### [affinityctf.com](./affinityctf.com/README.md)
 
 ## CTF dumping
 
