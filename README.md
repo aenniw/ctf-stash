@@ -12,6 +12,7 @@
   - [Round - 2](./www.thecatch.cz/round-2/README.md)
 - ### [hackcon.online](./hackcon.online/README.md)
 - ### [forensic-night.cesnet.cz](./forensic-night.cesnet.cz/README.md)
+- ### [ctf.dragonsector.pl](./ctf.dragonsector.pl/README.md)
 
 ## CTF dumping
 
