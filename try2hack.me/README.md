@@ -193,7 +193,7 @@ Check for `OSVDB-561: /server-status` as `nikto` suggested:
 root@kali:~# curl http://127.0.0.1:8000/server-status
 ```
 
-[Server status](./09/server-status.png) site contained hostname ` cardingphorum.com`, just `dig` it and you have the IP address.
+[Server status](./04/server-status.png ":ignore") site contained hostname ` cardingphorum.com`, just `dig` it and you have the IP address.
 
 ---
 
@@ -344,7 +344,7 @@ Tajné heslo se shoduje s rodným číslem prezidenta České republiky Miloše 
 
 ### Zadání:
 
-Pro přihlášení do interního systému napadené společnosti je použita utilita [login](./08/login.zip) zkompilovaná pro platformu Windows. Heslo pro přihlášení skrz tuto jednoúčelovou aplikaci je shodné s hledaným tajným heslem.
+Pro přihlášení do interního systému napadené společnosti je použita utilita [login](./08/login.zip ":ignore") zkompilovaná pro platformu Windows. Heslo pro přihlášení skrz tuto jednoúčelovou aplikaci je shodné s hledaným tajným heslem.
 
 ---
 
@@ -373,7 +373,7 @@ Tajné heslo pro splnění tohoto úkolu je stejné, jako anglicky psané město
 
 ### Postup řešení
 
-Putting the name into [facebook](https://www.facebook.com/) returned `Jason Macrapatulos's` profile (currently defunct), which contained link to his twitter account [JasonMacra](https://twitter.com/JasonMacra). This contained post with the picture of his house. After clicking on the date at the tweet, [the detailed tweet view](./09/JasonMacra_twitter.png) revealed name of the city - `*******`.
+Putting the name into [facebook](https://www.facebook.com/) returned `Jason Macrapatulos's` profile (currently defunct), which contained link to his twitter account [JasonMacra](https://twitter.com/JasonMacra). This contained post with the picture of his house. After clicking on the date at the tweet, [the detailed tweet view](./09/JasonMacra_twitter.png ":ignore") revealed name of the city - `*******`.
 
 ---
 
@@ -391,7 +391,7 @@ Brudges
 
 ### Zadání:
 
-Dokázal jsi proniknout do sítě významné společnosti, kde jsi zapnul sniffer a zachytil část [síťového provozu](./10/netdump.zip). Podaří se ti její analýzou získat tajné heslo, které se v daný moment přes síť přenášelo?
+Dokázal jsi proniknout do sítě významné společnosti, kde jsi zapnul sniffer a zachytil část [síťového provozu](./10/netdump.zip ":ignore"). Podaří se ti její analýzou získat tajné heslo, které se v daný moment přes síť přenášelo?
 
 ---
 
@@ -515,7 +515,7 @@ Dlwnb5xxHiw
 
 ### Zadání:
 
-Získal jsi přístup k telefonu oběti, přičemž tvým cílem je průnik do v něm nainstalované, ovšem heslem chráněné aplikace [findmypass.apk](./13/findmypass.apk). Heslo pro přístup do uvedené aplikace se shoduje s tajným heslem tohoto kola.
+Získal jsi přístup k telefonu oběti, přičemž tvým cílem je průnik do v něm nainstalované, ovšem heslem chráněné aplikace [findmypass.apk](./13/findmypass.apk ":ignore"). Heslo pro přístup do uvedené aplikace se shoduje s tajným heslem tohoto kola.
 
 ---
 
