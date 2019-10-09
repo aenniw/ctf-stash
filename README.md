@@ -5,11 +5,12 @@
 - ### [try2hack.me](./try2hack.me/README.md)
 - ### [tryhackme.com](./tryhackme.com/README.md)
 - ### [catch the qubit](./catch-the-qubit/README.md)
-- ### thecatch.cz 2018
-  - [Practice Challenges](./www.thecatch.cz/round-0/README.md)
-  - [Round - 1](./www.thecatch.cz/round-1/README.md)
-  - [Round - 2 (leaked)](./www.thecatch.cz/round-2-leaked/README.md)
-  - [Round - 2](./www.thecatch.cz/round-2/README.md)
+- ### thecatch.cz - 2018
+  - [Practice Challenges](./www.thecatch.cz-18/round-0/README.md)
+  - [Round - 1](./www.thecatch.cz-18/round-1/README.md)
+  - [Round - 2 (leaked)](./www.thecatch.cz-18/round-2-leaked/README.md)
+  - [Round - 2](./www.thecatch.cz-18/round-2/README.md)
+- ### [thecatch.cz - 2019](./www.thecatch.cz-19/README.md)
 - ### [hackcon.online](./hackcon.online/README.md)
 - ### [forensic-night.cesnet.cz](./forensic-night.cesnet.cz/README.md)
 - ### [ctf.dragonsector.pl](./ctf.dragonsector.pl/README.md)

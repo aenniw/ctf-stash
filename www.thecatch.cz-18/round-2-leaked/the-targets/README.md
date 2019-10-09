@@ -40,7 +40,7 @@ plt.show()
 <details><summary>FLAG:</summary>
 
 ```
-CT18-TCrp-se9H-OKa9-7jI3
+CT18-7Uiz-VZrd-EhOy-MJWd
 ```
 
 </details>
