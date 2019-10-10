@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # Based on: https://github.com/ichinano/CTFdScraper
 
+### requirements
+# pip3 install unidecode
+
 from requests import session
 from bs4 import BeautifulSoup
 import unidecode
@@ -72,6 +75,11 @@ class CTFdCrawl:
                             headers=self.headers).json()
         return resp['data'] if self.version == 'v.1.2.0' else resp
 
+    def parseSolves(self, id):
+        resp = self.ses.get('{}/{}/solves'.format(self.ch_url, id),
+                            headers=self.headers).json()
+        return resp['data'] if self.version == 'v.1.2.0' else resp
+
     def parseAll(self):
         print('[+] Finding challs')
         if self.version == 'v.1.0':
@@ -106,7 +114,7 @@ class CTFdCrawl:
             self.entry[ch_cat].update(entries)
             count += 1
 
-    def createArchive(self):
+    def createArchive(self,with_solves=True):
         print('\n[+] Downloading assets . . .')
         if not os.path.exists(self.title):
             os.makedirs(self.title)
@@ -151,6 +159,12 @@ class CTFdCrawl:
                             with open(directory + '/' + filename, 'wb') as f:
                                 f.write(resp.content)
                                 f.close()
+                if with_solves:
+                    solves_data = self.parseSolves(vals['ID'])
+                    with open('{}/solves.json'.format(directory), 'w') as sf:
+                        sf.write(json.dumps(solves_data, sort_keys=True, indent=4))
+
+
 
 
 def main():
