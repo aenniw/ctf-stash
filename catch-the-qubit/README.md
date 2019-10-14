@@ -6,7 +6,7 @@ CESNET Forensic Laboratory need your help with the case ”Ethan’s Flash Drive
 - Classified documents you are looking for contain following first page: ![document.png](./document.png ":ignore")
 - One of the classified document contains information how to claim the contest prize.
 - [catch-the-qubit_instructions.pdf](./catch-the-qubit_instructions.pdf ":ignore")
-- [usb_image_stripped.lzma](./usb_image_stripped.lzma ":ignore")
+- [usb_image_stripped.tar.lzma](./usb_image_stripped.tar.lzma ":ignore")
 
 ---
 
