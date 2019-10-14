@@ -7,15 +7,25 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@master
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.0
+      - name: Setup ssh-key
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          EXTERNAL_REPOSITORY: aenniw/ctf-stash
+        run : |
+          mkdir ~/.ssh
+          ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
+          echo "${ACTIONS_DEPLOY_KEY}" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+
+      - name: Deploy
+        env:
+          PUBLISH_REPOSITORY: aenniw/ctf-stash
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./
+        run: |
+          git remote add public git@github.com:${PUBLISH_REPOSITORY}.git
+          git checkout -B ${PUBLISH_BRANCH}
+          git push -f public ${PUBLISH_BRANCH}
