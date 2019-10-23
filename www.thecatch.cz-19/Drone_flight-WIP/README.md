@@ -10,6 +10,8 @@ Good luck! [drone_flight.gps.gz](./drone_flight.gps.gz ":ignore")
 
 #### Solution:
 
+- based on [TheCatch-18 - The targets](/www.thecatch.cz-18/round-2-leaked/README?id=the-targets)
+
 ```bash
 
 ```

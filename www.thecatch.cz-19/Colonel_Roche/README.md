@@ -10,6 +10,8 @@ Good luck! [colonel_roche.encrypted.gz](./colonel_roche.encrypted.gz ":ignore")
 
 #### Solution:
 
+- based on [TheCatch-18 - The Colonel](/www.thecatch.cz-18/round-2-leaked/README?id=the-colonel)
+
 ```python
 #!/usr/bin/env python2
 

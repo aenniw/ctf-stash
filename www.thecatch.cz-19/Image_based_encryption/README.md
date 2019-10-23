@@ -15,27 +15,27 @@ Good luck! [message.tar.gz](./message.tar.gz ":ignore")
 
 from PIL import Image
 
+c = Image.open("c.png")
+c_pix = c.load()
 
-def hex_to_rgb(hex):
-    hex = hex.split('0x')[1]
-    return (0, 0, int(hex[-2:], 16))
+m = Image.open("m.png")
+m_pix = m.load()
 
+e = Image.new('L',(c.size[0],c.size[1]))
+e_pix = e.load()
 
-with Image.open('m.png') as m_png:
-    with Image.open('c.png') as c_png:
-        m = m_png.load()
-        c = c_png.load()
+for o in range(c.size[1]):
+    for i in range(c.size[0]):
 
-        tuples = []
-        for o in range(m_png.size[1]):
-            for i in range(m_png.size[0]):
-                color = "{0:#0{1}x}".format(
-                    int(m[i, o] * c[i, o] * c[i, o]), 8)
-                tuples.append(hex_to_rgb(color))
+        # Because A. Einstein is the hint:
+        # e = mc^2   // 24 bit number
+        mcc = (m_pix[i, o] * c_pix[i, o] * c_pix[i, o])
 
-        with Image.new('RGB', m_png.size) as im:
-            im.putdata(tuples)
-            im.save('flag.png')
+        # Take only 8 Least Significant Bits
+        e_pix[i,o] = ((mcc & 0xFF))
+
+e.save('e.png',"PNG")
+e.show()
 ```
 
 ---

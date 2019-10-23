@@ -10,6 +10,8 @@ Good luck. [autonomous_car.gps.gz](./autonomous_car.gps.gz ":ignore")
 
 #### Solution:
 
+- based on [TheCatch-18 - Tracing the Traveler](/www.thecatch.cz-18/round-2-leaked/README?id=tracing-the-traveler)
+
 ```bash
 function to-char() { printf "\\$(printf '%03o' "$1")"; }
 
