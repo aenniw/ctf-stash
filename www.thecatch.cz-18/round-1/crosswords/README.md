@@ -6,8 +6,11 @@ Agent, you have a free day today so you decided to have a coffee and read the la
 
 #### Solution:
 
+This is almost standard regex crossword similar to those on [http://regexcrossword.com](http://regexcrossword.com).
+Only difficulty is its shape. For solution see comments in [crosswords.py](./crosswords.py ":ignore")
+
 ```bash
-echo "WIP"
+python3 crosswords.py
 ```
 
 ---
