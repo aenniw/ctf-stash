@@ -17,6 +17,7 @@
 - ### [affinityctf.com](./affinityctf.com/README.md)
 - ### [nactf.com](./nactf.com/README.md)
 - ### [challenges.reply.com](./challenges.reply.com/README.md)
+- ### [ctf.ritsec.club](./ritsec_ctf_2019/README.md)
 
 ## CTF dumping
 
@@ -34,6 +35,8 @@ External tools [CTFdScraper](https://github.com/ichinano/CTFdScraper) [CTFDump](
 ## Resources
 
 - Curated list of Unix binaries [GTFOBins](https://gtfobins.github.io/)
+- USB pcap how-to [LFC-Forensics](https://bitvijays.github.io/LFC-Forensics.html)
+- Stegano cheatsheet [steganography-101](https://pequalsnp-team.github.io/cheatsheet/steganography-101)
 
 ## Building locally
 

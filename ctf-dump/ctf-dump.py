@@ -33,6 +33,7 @@ md_appendix = '''
 ```
 
 </details>
+<br/>
 '''
 
 
@@ -129,7 +130,7 @@ class CTFdCrawl:
             key = unidecode.unidecode(key)
             for keys, vals in val.items():
                 keys = r.sub('', unidecode.unidecode(keys).strip())
-                directory = '{}/{} [{} pts]'.format(key, keys, vals['Points'])
+                directory = '{}/{}'.format(key, keys)
                 directory = directory.replace(' / ', '-').replace(' ', '_')
                 print('Directory', directory, 'has been created')
                 if not os.path.exists(directory):
