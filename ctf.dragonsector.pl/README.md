@@ -10,6 +10,10 @@
 
 # Miscellaneous
 
+## BabyPDF
+
+[BabyPDF](./BabyPDF/README.md ":include")
+
 ## PlayCAP
 
 [PlayCAP](./playCAP/README.md ":include")

@@ -1,4 +1,4 @@
- #### Challenge:
+#### Challenge:
 
 The flag is in the Portable Document Format file, nuff said.
 
