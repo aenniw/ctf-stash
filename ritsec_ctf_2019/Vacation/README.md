@@ -7,7 +7,10 @@ These are my favorite places to visit [http://us-central-1.ritsec.club/l/chromeb
 #### Solution:
 
 ```bash
-WIP
+unlzma chromebin.lzma
+mv chromebin chromebin.tar
+tar -xf chromebin.tar 'Chrome/User Data/Default/Bookmarks'
+cat  'Chrome/User Data/Default/Bookmarks' | jq .roots.other.children[].name | tr -d '"' | tr -d "\n"
 ```
 
 ---
