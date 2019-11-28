@@ -6,6 +6,12 @@ One of our operatives sent us this packet capture but we aren't quite sure what 
 
 #### Solution:
 
+```bash
+tshark -r ./URGGGGGG.pcapng -Y "((usb.transfer_type == 0x01) && !(usb.capdata == 00:00:00:00:00:00:00:00))" -T fields -e usb.capdata > keystrokes.txt
+```
+
+- Keyboard HID translation table [usb_hid_keys.h](https://gist.github.com/MightyPork/6da26e382a7ad91b5496ee55fdc73db2)
+
 ```python
 #!/usr/bin/python3
 
@@ -17,59 +23,47 @@ usb_codes = {
     0x1C: "yY", 0x1D: "zZ", 0x1E: "1!", 0x1F: "2@", 0x20: "3#", 0x21: "4$",
     0x22: "5%", 0x23: "6^", 0x24: "7&", 0x25: "8*", 0x26: "9(", 0x27: "0)",
     0x2C: "  ", 0x2D: "-_", 0x2E: "=+", 0x2F: "[{", 0x30: "]}",  0x32: "#~",
-    0x33: ";:", 0x34: "'\"",  0x36: ",<",  0x37: ".>",
+    0x33: ";:", 0x34: "'\"",  0x36: ",<",  0x37: ".>"
 }
 
-
-def remove_at(i, s):
-    return s[:i] + s[i+1:]
-
-
-def insert_at(i, s, v):
-    return s[:i-1] + v + s[i-1:]
-
-
 row = 0
-col = 0
 lines = [""]
-last_key_code = ''
-for x in open("keystrokes.txt", "r").readlines():
-    code = int(x[6:8], 16)
-    if code == last_key_code:
-        continue
+prev_key_code = None
+for packet in open("keystrokes.txt", "r").readlines():
+    packet = packet.replace(':', '')
 
-    if code == 0x4f:
-        col += 1
-    elif code == 0x50:
-        col -= 1
-    elif code == 0x51:
+    ctrl_pressed = int(packet[:2], 16) in [0x01, 0x10]
+    shift_pressed = int(packet[:2], 16) in [0x02, 0x20]
+    key_code = int(packet[4:6], 16)
+
+    if key_code == prev_key_code:
+        continue
+    prev_key_code = key_code
+
+    if key_code in [0x51, 0x28]:
+        if len(lines) <= row + 1:
+            lines.append("")
+        row += 1
+    elif key_code == 0x52:
         row -= 1
-    elif code == 0x52:
-        row += 1
-        if len(lines) == row:
-            lines.append(' ' * col)
-    elif code == 0x4c:
-        lines[row] = remove_at(col+1, lines[row])
-        col -= 1
-    elif code == 0x2a:
-        lines[row] = remove_at(col, lines[row])
-        col -= 1
-    elif code == 0x28:
-        row += 1
-        col = 0
-        lines.insert(row, "")
-    elif code not in usb_codes:
-        continue
-    elif int(x[0:2], 16) == 2:
-        lines[row] += usb_codes[code][1]
-        col += 1
-    else:
-        lines[row] += usb_codes[code][0]
-        col += 1
-    last_key_code = code
+    elif key_code == 0x2a:
+        lines[row] += "\b"
+    elif key_code == 0x4c:
+        lines[row] += "d̼"
+    elif key_code == 0x4f:
+        lines[row] += "»"
+    elif key_code == 0x50:
+        lines[row] += "«"
+    elif key_code in usb_codes:
+        key = usb_codes[key_code][1] if shift_pressed else usb_codes[key_code][0]
+        if not ctrl_pressed:
+            lines[row] += key
+        elif key in "cC":
+            lines[row] += 'c̼'
+        elif key in "vV":
+            lines[row] += 'v̼'
 
-for l in lines:
-    print(l)
+print("\n".join(lines).replace("«»", ""))
 
 ```
 
