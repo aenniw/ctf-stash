@@ -21,6 +21,7 @@
 - ### [venividivici.iitdh.ac.in](./venividivici.iitdh.ac.in/README.md)
 - ### [aeroctf.com](./aero-ctf-2020/README.md)
 - ### [utctf.live](./utctf-2020/README.md)
+- ### [tuctf.com](./tuctf.com/README.md)
 
 ## CTF dumping
 
