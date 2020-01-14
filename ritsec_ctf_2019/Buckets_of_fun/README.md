@@ -7,6 +7,7 @@ http://bucketsoffun-ctf.s3-website-us-east-1.amazonaws.com
 #### Solution:
 
 ```bash
+pip3 install --user awscli
 aws s3 ls s3://list-s3.scriptingis.life.ctf --no-sign-request --region us-east-1
 ```
 
