@@ -18,6 +18,7 @@
 - ### [nactf.com](./nactf.com/README.md)
 - ### [challenges.reply.com](./challenges.reply.com/README.md)
 - ### [ctf.ritsec.club](./ritsec_ctf_2019/README.md)
+- ### [venividivici.iitdh.ac.in](./venividivici.iitdh.ac.in/README.md)
 
 ## CTF dumping
 
