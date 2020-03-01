@@ -19,6 +19,7 @@
 - ### [challenges.reply.com](./challenges.reply.com/README.md)
 - ### [ctf.ritsec.club](./ritsec_ctf_2019/README.md)
 - ### [venividivici.iitdh.ac.in](./venividivici.iitdh.ac.in/README.md)
+- ### [aeroctf.com](./aero-ctf-2020/README.md)
 
 ## CTF dumping
 
@@ -32,12 +33,19 @@ External tools [CTFdScraper](https://github.com/ichinano/CTFdScraper) [CTFDump](
 
 - [CyberChef](https://gchq.github.io/CyberChef/)
 - [StegOnline](https://georgeom.net/StegOnline/upload)
+- [Volatility - Docker](https://hub.docker.com/r/blacktop/volatility)
+  - `docker run --rm -v $(pwd):/data:ro blacktop/volatility -f silentbanker.vmem pslist`
 
 ## Resources
 
 - Curated list of Unix binaries [GTFOBins](https://gtfobins.github.io/)
 - USB pcap how-to [LFC-Forensics](https://bitvijays.github.io/LFC-Forensics.html)
 - Stegano cheatsheet [steganography-101](https://pequalsnp-team.github.io/cheatsheet/steganography-101)
+
+## FAQ
+
+- serving local processes via ncat
+  - `ncat --listen --keep-open --sh-exec ./main.py 7777`
 
 ## Building locally
 
