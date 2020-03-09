@@ -4,3 +4,8 @@
 /book.mobi
 /book.epub
 .vscode
+.dumps
+
+solve.py
+solve.java
+solve.c

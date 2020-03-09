@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Based on: https://github.com/ichinano/CTFdScraper
 
-### NOTE: install requirements
+# NOTE: install requirements
 # pip3 install -r requirements.txt
 
 from requests import session
@@ -38,13 +38,12 @@ md_appendix = '''
 
 
 class CTFdCrawl:
-    def __init__(self, team, passwd, url, only_solves=False):
+    def __init__(self, team, passwd, url):
         self.auth = dict(name=team, password=passwd)
         self.ses = session()
         self.entry = dict()
         self.keys = 'data'
         self.url = url
-        self.only_solves = only_solves
         self.ch_url = self.url + '/api/v1/challenges'
         self.headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
@@ -79,17 +78,13 @@ class CTFdCrawl:
                             headers=self.headers).json()
         return resp['data'] if self.version == 'v.1.2.0' else resp
 
-    def parseSolves(self, id):
-        resp = self.ses.get('{}/{}/solves'.format(self.ch_url, id),
-                            headers=self.headers).json()
-        return resp['data'] if self.version == 'v.1.2.0' else resp
-
     def parseAll(self):
         print('[+] Finding challs')
         if self.version == 'v.1.0':
             self.ch_url = self.url + '/chals'
             self.keys = 'game'
-        html = sorted(self.ses.get(self.ch_url, headers=self.headers).json()[self.keys], key=lambda x: sorted(x.keys()))
+        html = sorted(self.ses.get(self.ch_url, headers=self.headers).json()[
+                      self.keys], key=lambda x: sorted(x.keys()))
         ids = [i['id'] for i in html]
 
         for id in ids:
@@ -120,10 +115,7 @@ class CTFdCrawl:
         print('\n[+] Downloading assets . . .')
         if not os.path.exists(self.title):
             os.makedirs(self.title)
-
         os.chdir(self.title)
-        with open('challs.json', 'w') as f:
-            f.write(json.dumps(self.entry, sort_keys=True, indent=4))
 
         r = re.compile("[^A-Za-z0-9 .\'_-]")
         for key, val in self.entry.items():
@@ -139,48 +131,42 @@ class CTFdCrawl:
                 files = vals['Files']
                 hint = [h for h in vals['Hint'] if isinstance(h, str)]
 
-                # Dump only solve tables:
-                solves_data = self.parseSolves(vals['ID'])
-                with open('{}/solves.json'.format(directory), 'w') as sf:
-                    sf.write(json.dumps(solves_data, sort_keys=True, indent=4))
-                    print('Solves file', '{}/solves.json'.format(directory), 'has been created')
+                with open('{}/README.md'.format(directory), 'w') as f:
+                    f.write('#### Challenge:\n\n')
+                    f.write(vals['Description'].strip())
+                    if len(hint) > 0:
+                        f.write('\n\n##### Hints:\n{}'.format(', '.join(hint)))
+                    if len(files) > 0:
+                        f.write('\n\n##### Files:\n{}'.format(", ".join(
+                            map(lambda f: '[{}](./{} ":ignore")'.format(f, f),
+                                map(lambda f: f.split('/')[-1].split('?')[0], files)))))
+                    f.write(md_appendix)
+                    print('%s/README.md has been created' % (directory))
 
-                # Dump everything else:
-                if (not self.only_solves):
-                    with open('{}/README.md'.format(directory), 'w') as f:
-                        f.write('#### Challenge:\n\n')
-                        f.write(vals['Description'].strip())
-                        if len(hint) > 0:
-                            f.write('\n\n##### Hints:\n{}'.format(', '.join(hint)))
-                        if len(files) > 0:
-                            f.write('\n\n##### Files:\n{}'.format(", ".join(
-                                map(lambda f: '[{}](./{})'.format(f, f),
-                                    map(lambda f: f.split('/')[-1].split('?')[0], files)))))
-                        f.write(md_appendix)
-                        print('README.md file', '{}/README.md'.format(directory), 'has been created')
+                if files:
+                    for i in files:
+                        filename = i.split('/')[-1].split('?')[0]
+                        print(filename, i)
+                        if not os.path.exists(directory + '/' + filename):
+                            resp = self.ses.get(self.url + i,
+                                                stream=False,
+                                                headers=self.headers)
+                            with open(directory + '/' + filename, 'wb') as f:
+                                f.write(resp.content)
+                                f.close()
 
-                    if files:
-                        for i in files:
-                            filename = i.split('/')[-1].split('?')[0]
-                            print(filename, i)
-                            if not os.path.exists(directory + '/' + filename):
-                                resp = self.ses.get(self.url + i,
-                                                    stream=False,
-                                                    headers=self.headers)
-                                with open(directory + '/' + filename, 'wb') as f:
-                                    f.write(resp.content)
-                                    f.close()
 
 def main():
-    parser = argparse.ArgumentParser(description='This program dumps CTFd challenges via it\'s REST API.')
-    parser.add_argument('-c', '--ctfd_url', nargs='?', help='https://noob-ctfd.com')
+    parser = argparse.ArgumentParser(
+        description='This program dumps CTFd challenges via it\'s REST API.')
+    parser.add_argument('-c', '--ctfd_url', nargs='?',
+                        help='https://noob-ctfd.com')
     parser.add_argument('-u', '--username', nargs='?', help='SuperHacka')
     parser.add_argument('-p', '--password', nargs='?', help='LabMem#003')
-    parser.add_argument('-s', '--solves',   nargs='?', help='Only update solves, nothing else.', const=True)
 
     args = parser.parse_args()
 
-    ctf = CTFdCrawl(args.username, args.password, args.ctfd_url, args.solves)
+    ctf = CTFdCrawl(args.username, args.password, args.ctfd_url)
     ctf.parseAll()
     ctf.createArchive()
 
