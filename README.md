@@ -22,6 +22,7 @@
 - ### [aeroctf.com](./aero-ctf-2020/README.md)
 - ### [utctf.live](./utctf-2020/README.md)
 - ### [tuctf.com](./tuctf.com/README.md)
+- ### [ctfsecurinets.com](./ctfsecurinets-com-2020/README.md)
 
 ## CTF dumping
 
@@ -38,6 +39,11 @@ External tools [CTFdScraper](https://github.com/ichinano/CTFdScraper) [CTFDump](
 - [unicode_steganography](https://330k.github.io/misc_tools/unicode_steganography.html)
 - [Volatility - Docker](https://hub.docker.com/r/blacktop/volatility)
   - `docker run --rm -v $(pwd):/data:ro blacktop/volatility -f silentbanker.vmem pslist`
+  - plugins:
+    - https://raw.githubusercontent.com/dfirfpi/hotoloti/master/volatility/mimikatz.py
+    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/sqlite_help.py
+    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/chromehistory.py
+    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/firefoxhistory.py
 
 ## Resources
 
