@@ -4,7 +4,9 @@
 # NOTE: install requirements
 # pip3 install -r requirements.txt
 
+import requests
 from requests import session
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from bs4 import BeautifulSoup
 import unidecode
 import json
@@ -13,7 +15,9 @@ import requests
 import re
 import sys
 import argparse
+import ssl
 
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 md_appendix = '''
 
@@ -38,12 +42,13 @@ md_appendix = '''
 
 
 class CTFdCrawl:
-    def __init__(self, team, passwd, url):
+    def __init__(self, team, passwd, url, overwrite):
         self.auth = dict(name=team, password=passwd)
         self.ses = session()
         self.entry = dict()
         self.keys = 'data'
         self.url = url
+        self.overwrite = overwrite
         self.ch_url = self.url + '/api/v1/challenges'
         self.headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
@@ -55,7 +60,8 @@ class CTFdCrawl:
         self.checkVersion()
 
     def login(self):
-        resp = self.ses.get(self.url + '/login', headers=self.headers)
+        resp = self.ses.get(self.url + '/login',
+                            headers=self.headers, verify=False)
         soup = BeautifulSoup(resp.text, 'lxml')
         nonce = soup.find('input', {'name': 'nonce'})
 
@@ -66,16 +72,16 @@ class CTFdCrawl:
         self.auth['nonce'] = nonce
         self.title = soup.title.string.replace(' ', '_')
 
-        resp = self.ses.post(self.url + '/login', data=self.auth)
+        resp = self.ses.post(self.url + '/login', data=self.auth, verify=False)
         return 'incorrect' not in resp.text
 
     def checkVersion(self):
-        resp = self.ses.get(self.ch_url, headers=self.headers)
+        resp = self.ses.get(self.ch_url, headers=self.headers, verify=False)
         self.version = 'v.1.2.0' if '404' not in resp.text else 'v.1.0'
 
     def parseChall(self, id):
         resp = self.ses.get('{}/{}'.format(self.ch_url, id),
-                            headers=self.headers).json()
+                            headers=self.headers, verify=False).json()
         return resp['data'] if self.version == 'v.1.2.0' else resp
 
     def parseAll(self):
@@ -83,8 +89,9 @@ class CTFdCrawl:
         if self.version == 'v.1.0':
             self.ch_url = self.url + '/chals'
             self.keys = 'game'
-        html = sorted(self.ses.get(self.ch_url, headers=self.headers).json()[
-                      self.keys], key=lambda x: sorted(x.keys()))
+        html = sorted(
+            self.ses.get(self.ch_url, headers=self.headers, verify=False)
+            .json()[self.keys], key=lambda x: sorted(x.keys()))
         ids = [i['id'] for i in html]
 
         for id in ids:
@@ -124,14 +131,20 @@ class CTFdCrawl:
                 keys = r.sub('', unidecode.unidecode(keys).strip())
                 directory = '{}/{}'.format(key, keys)
                 directory = directory.replace(' / ', '-').replace(' ', '_')
-                print('Directory', directory, 'has been created')
+
                 if not os.path.exists(directory):
                     os.makedirs(directory)
+                    print('Directory', directory, 'has been created')
 
-                files = vals['Files']
+                files = vals['Files'] or []
                 hint = [h for h in vals['Hint'] if isinstance(h, str)]
 
-                with open('{}/README.md'.format(directory), 'w') as f:
+                reamde_path = '{}/README.md'.format(directory)
+                if not self.overwrite and os.path.exists(reamde_path):
+                    print('Skipping', directory)
+                    continue
+
+                with open(reamde_path, 'w') as f:
                     f.write('#### Challenge:\n\n')
                     f.write(vals['Description'].strip())
                     if len(hint) > 0:
@@ -143,30 +156,36 @@ class CTFdCrawl:
                     f.write(md_appendix)
                     print('%s/README.md has been created' % (directory))
 
-                if files:
-                    for i in files:
-                        filename = i.split('/')[-1].split('?')[0]
-                        print(filename, i)
-                        if not os.path.exists(directory + '/' + filename):
-                            resp = self.ses.get(self.url + i,
-                                                stream=False,
-                                                headers=self.headers)
-                            with open(directory + '/' + filename, 'wb') as f:
-                                f.write(resp.content)
-                                f.close()
+                for i in files:
+                    filename = i.split('/')[-1].split('?')[0]
+                    print(filename, i)
+                    if not os.path.exists(directory + '/' + filename):
+                        resp = self.ses.get(self.url + i,
+                                            stream=False,
+                                            headers=self.headers,
+                                            verify=False)
+                        with open(directory + '/' + filename, 'wb') as f:
+                            f.write(resp.content)
+                            f.close()
 
 
 def main():
     parser = argparse.ArgumentParser(
         description='This program dumps CTFd challenges via it\'s REST API.')
-    parser.add_argument('-c', '--ctfd_url', nargs='?',
+    parser.add_argument('-c', '--ctfd_url', nargs='?', required=True,
                         help='https://noob-ctfd.com')
-    parser.add_argument('-u', '--username', nargs='?', help='SuperHacka')
-    parser.add_argument('-p', '--password', nargs='?', help='LabMem#003')
+    parser.add_argument('-u', '--username', nargs='?', required=True,
+                        help='SuperHacka')
+    parser.add_argument('-p', '--password', nargs='?', required=True,
+                        help='LabMem#003')
+    parser.add_argument('-o', '--overwrite', dest='overwrite',
+                        action='store_true')
+    parser.set_defaults(overwrite=False)
 
     args = parser.parse_args()
 
-    ctf = CTFdCrawl(args.username, args.password, args.ctfd_url)
+    ctf = CTFdCrawl(args.username, args.password, args.ctfd_url,
+                    args.overwrite)
     ctf.parseAll()
     ctf.createArchive()
 
