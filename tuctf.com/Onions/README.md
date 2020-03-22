@@ -7,7 +7,7 @@ Ogres are like files -- they have layers! [shrek.jpg](./shrek.jpg ":ignore")
 #### Solution:
 
 ```bash
-binwalk shrek,jpg
+binwalk shrek.jpg
 dd if=shrek.jpg of=payload bs=1 skip=275566
 file x payload
 7z x payload
