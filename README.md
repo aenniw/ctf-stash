@@ -34,16 +34,7 @@ External tools [CTFdScraper](https://github.com/ichinano/CTFdScraper) [CTFDump](
 
 ## CTF Toolkits
 
-- [CyberChef](https://gchq.github.io/CyberChef/)
-- [StegOnline](https://georgeom.net/StegOnline/upload)
-- [unicode_steganography](https://330k.github.io/misc_tools/unicode_steganography.html)
-- [Volatility - Docker](https://hub.docker.com/r/blacktop/volatility)
-  - `docker run --rm -v $(pwd):/data:ro blacktop/volatility -f silentbanker.vmem pslist`
-  - plugins:
-    - https://raw.githubusercontent.com/dfirfpi/hotoloti/master/volatility/mimikatz.py
-    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/sqlite_help.py
-    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/chromehistory.py
-    - https://raw.githubusercontent.com/superponible/volatility-plugins/master/firefoxhistory.py
+[CTF-tools.md](./CTF-tools.md ":include")
 
 ## Resources
 
