@@ -10,13 +10,13 @@
 
 ## basics_crypto-WIP
 
-[basics_crypto-WIP](./basics_crypto-WIP/README.md ":include")
+[basics_crypto](./basics_crypto/README.md ":include")
 
 # Forensics
 
 ## 1_Frame_per_Minute-WIP
 
-[1_Frame_per_Minute-WIP](./1_Frame_per_Minute-WIP/README.md ":include")
+[1_Frame_per_Minute](./1_Frame_per_Minute/README.md ":include")
 
 ## Observe_Closely-WIP
 
