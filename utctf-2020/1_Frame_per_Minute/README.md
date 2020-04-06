@@ -15,8 +15,6 @@ Note: that the actual flag data are located in the recording from `1:16` to `1:2
 
 ![](sstv.png)
 
-
-
 ---
 
 <details><summary>FLAG:</summary>
