@@ -44,7 +44,7 @@ ulong check(void *pvParm1)
 
 - these values can be easily retrieved via disassembling `check` function
 
-![](./check.png ":ignore")
+![check.png](./check.png ":ignore")
 
 ```python
 from pwn import *

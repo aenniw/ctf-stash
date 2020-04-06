@@ -13,7 +13,7 @@ After this setup, simply play the `wav` file in any player and the `RX-SSTV` wil
 
 Note: that the actual flag data are located in the recording from `1:16` to `1:26`.
 
-![](sstv.png)
+![sstv.png](./sstv.png ":ignore")
 
 ---
 
