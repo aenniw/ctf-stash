@@ -8,7 +8,7 @@
 
 [Random_ECB](./Random_ECB/README.md ":include")
 
-## basics_crypto-WIP
+## basics_crypto
 
 [basics_crypto](./basics_crypto/README.md ":include")
 
@@ -22,9 +22,9 @@
 
 [Observe_Closely-WIP](./Observe_Closely-WIP/README.md ":include")
 
-## Spectre-WIP
+## Spectre
 
-[Spectre-WIP](./Spectre-WIP/README.md ":include")
+[Spectre](./Spectre/README.md ":include")
 
 ## The_Legend_of_Hackerman_Pt_1
 
