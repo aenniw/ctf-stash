@@ -18,9 +18,9 @@
 
 [1_Frame_per_Minute](./1_Frame_per_Minute/README.md ":include")
 
-## Observe_Closely-WIP
+## Observe_Closely
 
-[Observe_Closely-WIP](./Observe_Closely-WIP/README.md ":include")
+[Observe_Closely](./Observe_Closely/README.md ":include")
 
 ## Spectre
 
