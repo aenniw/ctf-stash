@@ -7,7 +7,7 @@ My friend said they hid a flag in this picture, but it's broken! Now that I thin
 #### Solution:
 
 ```bash
-
+strings secret.jpeg | grep -i 'utflag'
 ```
 
 ---
@@ -15,7 +15,7 @@ My friend said they hid a flag in this picture, but it's broken! Now that I thin
 <details><summary>FLAG:</summary>
 
 ```
-
+utflag{fil3_ext3nsi0ns_4r3nt_r34l}
 ```
 
 </details>
