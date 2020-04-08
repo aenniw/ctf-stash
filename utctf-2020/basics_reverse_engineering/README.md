@@ -7,7 +7,7 @@ I know there's a string in this binary somewhere.... Now where did I leave it? [
 #### Solution:
 
 ```bash
-
+strings calc | grep -i 'utflag'
 ```
 
 ---
@@ -15,7 +15,7 @@ I know there's a string in this binary somewhere.... Now where did I leave it? [
 <details><summary>FLAG:</summary>
 
 ```
-
+utflag{str1ngs_1s_y0ur_fr13nd}
 ```
 
 </details>
