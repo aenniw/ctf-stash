@@ -38,9 +38,9 @@
 
 [Zero](./Zero/README.md ":include")
 
-## basics_forensics-WIP
+## basics_forensics
 
-[basics_forensics-WIP](./basics_forensics-WIP/README.md ":include")
+[basics_forensics](./basics_forensics/README.md ":include")
 
 # Networking
 
