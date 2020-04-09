@@ -4,28 +4,31 @@
 
 # Coding
 
-## jumpyrinth
+## Jumpyrinth
 
-[jumpyrinth](./jumpyrinth/README.md ":include")
+[Jumpyrinth](./jumpyrinth/README.md ":include")
 
-## puzzle
+## Puzzle
 
-[puzzle](./puzzle/README.md ":include")
+[Puzzle](./puzzle/README.md ":include")
 
 # Web
 
+## File Rover
+
+[File Rover](./filerover/README.md ":include")
+
 # Crypto
 
-## logceasar
+## LogCaesar
 
-[logceasar](./logceasar/README.md ":include")
+[LogCaesar](./logceasar/README.md ":include")
 
 # Miscellaneous
 
-## deep red dust
+## Deep red dust
 
-[deep red dust](./deep-red-dust/README.md ":include")
+[Deep red dust](./deep-red-dust/README.md ":include")
 
-## filerover
-
-[filerover](./filerover/README.md ":include")
+## Stegano>9000
+[Stegano>9000](./stegano_over_9000/README.md ":include")
