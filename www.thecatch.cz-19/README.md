@@ -8,9 +8,9 @@
 
 [Colonel_Roche](./Colonel_Roche/README.md ":include")
 
-## Drone flight-WIP
+## Drone flight
 
-[Drone_flight-WIP](./Drone_flight-WIP/README.md ":include")
+[Drone_flight](./Drone_flight/README.md ":include")
 
 ## Image based encryption
 
