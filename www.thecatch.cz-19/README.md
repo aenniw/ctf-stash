@@ -26,9 +26,9 @@
 
 [Autonomous_car](./Autonomous_car/README.md ":include")
 
-## Ice-cream selling machine-WIP
+## Ice-cream selling machine
 
-[Ice-cream_selling_machine-WIP](./Ice-cream_selling_machine-WIP/README.md ":include")
+[Ice-cream_selling_machine](./Ice-cream_selling_machine/README.md ":include")
 
 ## Payment Terminal
 

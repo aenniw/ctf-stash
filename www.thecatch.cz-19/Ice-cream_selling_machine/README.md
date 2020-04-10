@@ -10,16 +10,16 @@ Good luck! [ice-cream_selling_machine.pcap.gz](./ice-cream_selling_machine.pcap.
 
 #### Solution:
 
-```bash
+- after inspection of pcap there seems to be 2 interesting streams `HTTP` and `RTP` and playing the `RTP` stream via wireshark reveals the flag
 
-```
+![wireshark.png](./wireshark.png ":ignore")
 
 ---
 
 <details><summary>FLAG:</summary>
 
 ```
-
+FLAG{1b6f-2rej-0no7-ewc4}
 ```
 
 </details>
