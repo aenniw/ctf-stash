@@ -34,9 +34,9 @@
 
 [Payment_Terminal-WIP](./Payment_Terminal-WIP/README.md ":include")
 
-## Vacuum cleaner-WIP
+## Vacuum cleaner
 
-[Vacuum_cleaner-WIP](./Vacuum_cleaner-WIP/README.md ":include")
+[Vacuum_cleaner](./Vacuum_cleaner/README.md ":include")
 
 # Berserker's Web
 
