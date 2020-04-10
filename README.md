@@ -54,3 +54,8 @@ To work locally with this project, you'll have to follow the steps below:
 1. Fork, clone or download this project
 1. Install Docsify `npm install docsify-cli -g`
 1. Preview your project: `docsify serve`
+
+## Credits
+
+- [aenniw](https://ctftime.org/user/65413)
+- [spacecowboy](https://ctftime.org/user/65412)
