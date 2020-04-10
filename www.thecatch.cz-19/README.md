@@ -30,9 +30,9 @@
 
 [Ice-cream_selling_machine-WIP](./Ice-cream_selling_machine-WIP/README.md ":include")
 
-## Payment Terminal-WIP
+## Payment Terminal
 
-[Payment_Terminal-WIP](./Payment_Terminal-WIP/README.md ":include")
+[Payment_Terminal](./Payment_Terminal/README.md ":include")
 
 ## Vacuum cleaner-WIP
 
