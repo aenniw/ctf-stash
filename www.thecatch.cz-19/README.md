@@ -16,9 +16,9 @@
 
 [Image_based_encryption](./Image_based_encryption/README.md ":include")
 
-## Seventh element-WIP
+## Seventh element
 
-[Seventh_element-WIP](./Seventh_element-WIP/README.md ":include")
+[Seventh_element](./Seventh_element/README.md ":include")
 
 # Berserker's Devices
 
