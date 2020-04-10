@@ -1,11 +1,16 @@
 #### Challenge:
 
-Agent, the "Nth element" is codename used by foreign agent for some kind of secret data transfer. Today, we have caught the courier and seize a drive labeled `Sixth Element`. Download the image, analyze it and get the secret message. _ URL: [https://owncloud.cesnet.cz/index.php/s/Itkz1zbREfBt4QJ](./sixth_element.dd.tar.lzma ":ignore") _ Password: `the_sixth_element` Good luck, Agent
+Hi Commander,
+
+thanks to your discovery of the drone as a false target, our radars could concentrate on the detection of the second drone. This one was classic quadcopter and our trained falcon has caught it up and took it off the sky. The last broadcast was `Seventh element down, malfunction due claws and beak in propellers`. The wreck has been completely shattered and just one operational flash drive has been rescued from the crashsite. According to the intelligence, we believe that the drone was ordered to transport some coded message to the elementary school library in city of Ostrava in order to create backup uprising centre. You have to analyse the content of the drive and decode the message.
+
+Good luck! [Dowloand challenge file](https://owncloud.cesnet.cz/index.php/s/3xY8uberbY7fdXe) [16.2 MB, use password `7th-element2019`]
 
 ---
 
 #### Solution:
 
+- based on [TheCatch-18 - Sixth element](/www.thecatch.cz-18/round-2-leaked/README?id=sixth-element)
 - note: run as sudo
 
 ```bash
@@ -41,8 +46,8 @@ function umount-lo() {
   sudo losetup -d "$dev"
 }
 
-tar --lzma -xvf sixth_element.dd.tar.lzma
-mount-lo sixth_element.dd
+tar --lzma -xvf seventh_element.dd.tar.lzma
+mount-lo seventh_element.dd
 
 for p in /mnt/loop*; do
     test -f ${p}/.file && \
@@ -63,7 +68,7 @@ function getAddr() {
     cat ./parts.txt | sed -n "$(( $1 * 2 )) p"
 }
 
-ADDR=6
+ADDR=7
 CODE=""
 while true; do
 
@@ -83,7 +88,7 @@ echo $CODE
 <details><summary>FLAG:</summary>
 
 ```
-CT18-bBMe-A8cF-tqMD-6d8Z
+FLAG{tPJ4-idCH-GWlh-JjL8}
 ```
 
 </details>
