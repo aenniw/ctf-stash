@@ -10,8 +10,11 @@ Part 2: Mr. Boomer encoded the second part of the flag twice, using a different 
 
 #### Solution:
 
-```bash
-```
+- `Part 1` points out that file `3` is `Vigenere`
+  - file `1` is `jpeg` that contains 2 numbers `a` and `b` in [Maya numerals](https://en.wikipedia.org/wiki/Maya_numerals)
+  - file `2` seems to be encrypted an based on definition of `a` and `b` its [CyberChef - Affine Cipher](<https://gchq.github.io/CyberChef/#recipe=Affine_Cipher_Decode(7,19)&input=V3F2IEx2ZiB4cCAiaG5vdkl2byI>) that reveals `The Key is "codeRed"`
+  - file `3` is encrypted via `Vigenere` based on hint `recently visited France` and secret from file `2` can be used to decrypt it [CyberChef - Vigenere](<https://gchq.github.io/CyberChef/#recipe=Vigen%C3%A8re_Decode('codeRed')&input=aHpka3t6X3doZ19tcnlfCg>)
+- `Part 2` states that flag was `encoded` twice using just differend method `avg` was `74.5`, thus total was `149`, that leads us to `base` encodings and combination of [CyberChef - base 85](<https://gchq.github.io/CyberChef/#recipe=From_Base85('!-u')&input=QW8obWdIWUhpLkFTIzRvRGZvRGk9QG1nQDEwUXRRPSk7cWQ8QzF0NTFMa1opMTIoOHAxMXRvOEg5dVtWN1FFOCU4OEUhUTsqQCY>) + [CyberChef - base 64](<https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)&input=WVhJelgyWkFiV2xzYVVCeVgzY3hOMmhmTjJnelh6QnNaRjkzUUhra2ZRPT0>)
 
 ---
 
