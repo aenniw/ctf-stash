@@ -63,3 +63,5 @@
 
   - [Detox](http://relentless-coding.org/projects/jsdetox/install) - A Javascript malware analysis tool
   - [SQLMap](https://github.com/sqlmapproject/sqlmap) - Automatic SQL injection and database takeover tool
+  - [GitTools](https://github.com/internetwache/GitTools) - Git dumper
+  - [dotdotpwn](https://github.com/wireghoul/dotdotpwn) - Path traversal scanning

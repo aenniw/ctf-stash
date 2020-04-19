@@ -24,6 +24,7 @@
 - ### [tuctf.com](./tuctf.com/README.md)
 - ### [ctfsecurinets.com](./ctfsecurinets-com-2020/README.md)
 - ### [ctf.byteband.it](./ctf.byteband.it-2020/README.md)
+- ### [ctf.wpictf.xyz](./ctf.wpictf.xyz-2020/README.md)
 
 ## CTF dumping
 
