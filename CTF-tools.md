@@ -37,6 +37,7 @@
       - https://raw.githubusercontent.com/superponible/volatility-plugins/master/chromehistory.py
       - https://raw.githubusercontent.com/superponible/volatility-plugins/master/firefoxhistory.py
   - [Wireshark](https://www.wireshark.org/) - Used to analyze pcap or pcapng files
+  - [Online IMG editor](https://www3.lunapic.com/editor/) - Online image editor
 
 - ### Reverse
 
