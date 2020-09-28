@@ -16,14 +16,6 @@
 
 [Oldschool](./Oldschool/README.md ":include")
 
-## RSyay
-
-[RSyay](./RSyay/README.md ":include")
-
-## Secure_DES
-
-[Secure_DES](./Secure_DES/README.md ":include")
-
 ## meet_me_there
 
 [meet_me_there](./meet_me_there/README.md ":include")
