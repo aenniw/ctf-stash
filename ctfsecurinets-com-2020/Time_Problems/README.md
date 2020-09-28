@@ -9,13 +9,10 @@ Author: bibiwars
 #### Solution:
 
 ```bash
-volatility -f ./for2.raw imageinfo
+volatility -f for2.raw imageinfo
 volatility -f for2.raw --profile=Win7SP1x86 pslist
-mkdir plugins && cd plugins
-wget https://raw.githubusercontent.com/superponible/volatility-plugins/master/chromehistory.py
-wget https://raw.githubusercontent.com/superponible/volatility-plugins/master/sqlite_help.py
-cd -
-volatility --plugins=./plugins/ chromehistory -f for2.raw --profile=Win7SP1x86 | less
+git clone https://github.com/superponible/volatility-plugins.git
+volatility --plugins=./volatility-plugins -f for2.raw --profile=Win7SP1x86 chromehistory | less
 ```
 
 - visit http://52.205.164.112/ but it's down `Oups, Sorry mate, The flag is no longer available`

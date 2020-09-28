@@ -4,6 +4,7 @@
 
 - ### [try2hack.me](./try2hack.me/README.md)
 - ### [tryhackme.com](./tryhackme.com/README.md)
+- ### [bsidesbos.ctf.games](./bsidesbos-2020/README.md)
 - ### [catch the qubit](./catch-the-qubit/README.md)
 - ### thecatch.cz - 2018
   - [Practice Challenges](./www.thecatch.cz-18/round-0/README.md)

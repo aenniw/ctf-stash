@@ -7,7 +7,7 @@ Just do some magic on this <a href="https://mega.nz/#!3ehmRQLB!pQBPFR415KeXX2N8t
 #### Solution:
 
 ```bash
-volatility -f ./for1.raw imageinfo
+volatility -f for1.raw imageinfo
 volatility -f for1.raw --profile=Win7SP1x86 filescan
 #   0x000000001e24bcd0      2      1 R--rwd \Device\HarddiskVolume2\Users\studio\Desktop\steghide
 #   0x000000001e45e730      8      0 R--rwd \Device\HarddiskVolume2\Users\studio\Desktop\DS0394.jpg
@@ -16,7 +16,7 @@ volatility -f for1.raw --profile=Win7SP1x86 dumpfiles -Q 0x000000001e45e730 -n -
 mkdir plugins && cd plugins
 wget https://raw.githubusercontent.com/dfirfpi/hotoloti/master/volatility/mimikatz.py
 cd -
-volatility --plugins=./ mimikatz -f for1.raw --profile=Win7SP1x86
+volatility --plugins=./mimikatz -f for1.raw --profile=Win7SP1x86
 #   wdigest  studio           studio-PC        Messi2020
 ```
 

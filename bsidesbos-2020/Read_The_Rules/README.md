@@ -7,6 +7,7 @@ Please follow the rules for this CTF! <br><br>Connect here:<br><a href="/rules">
 #### Solution:
 
 ```bash
+curl -Ss https://bsidesbos.ctf.games/rules | grep -o "flag{.*}"
 ```
 
 ---
@@ -14,7 +15,7 @@ Please follow the rules for this CTF! <br><br>Connect here:<br><a href="/rules">
 <details><summary>FLAG:</summary>
 
 ```
-
+flag{its_time_to_hack}
 ```
 
 </details>

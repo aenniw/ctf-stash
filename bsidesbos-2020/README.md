@@ -8,6 +8,10 @@
 
 [Alice_and_Bob](./Alice_and_Bob/README.md ":include")
 
+## Fancy_Caesar_Cipher
+
+[Fancy_Caesar_Cipher](./Fancy_Caesar_Cipher/README.md ":include")
+
 # Forensics
 
 ## Amnesia

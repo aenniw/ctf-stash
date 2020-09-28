@@ -7,6 +7,10 @@ Ohh no! I can't remember anything, where have I been? <br><br> <b>Download the f
 #### Solution:
 
 ```bash
+volatility -f image.bin imageinfo
+volatility -f image.bin --profile=Win7SP1x86 pslist
+git clone https://github.com/superponible/volatility-plugins.git
+volatility --plugins=./volatility-plugins -f image.bin --profile=Win7SP1x86 chromehistory
 ```
 
 ---
@@ -14,7 +18,7 @@ Ohh no! I can't remember anything, where have I been? <br><br> <b>Download the f
 <details><summary>FLAG:</summary>
 
 ```
-
+flag{forensic_cookie_hunter}
 ```
 
 </details>
