@@ -22,3 +22,8 @@
 
 [minesweeper](./minesweeper/README.md ":include")
 
+# Misc
+
+## journey_through_space-time
+
+[journey_through_space-time](./journey_through_space-time/README.md ":include")
