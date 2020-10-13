@@ -11,6 +11,17 @@ Good Luck!
 #### Solution:
 
 ```bash
+#!/bin/bash
+
+for f in ./*.eml; do
+    msg=$(awk '/Content-Transfer-Encoding: base64/{flag=1; next} /--===============/{flag=0} flag' ${f})
+    
+    urls=$(echo ${msg} | grep -q -v 'Content-Disposition:' && \
+            echo ${msg} | base64 -i -d | egrep -o 'https?://[^ ]+')
+    for url in ${urls}; do
+        curl ${url} 2>/dev/null | grep FLAG
+    done
+done
 ```
 
 ---
