@@ -12,6 +12,7 @@
   - [Round - 2 (leaked)](./www.thecatch.cz-18/round-2-leaked/README.md)
   - [Round - 2](./www.thecatch.cz-18/round-2/README.md)
 - ### [thecatch.cz - 2019](./www.thecatch.cz-19/README.md)
+- ### [thecatch.cz - 2020](./www.thecatch.cz-20/README.md)
 - ### [hackcon.online](./hackcon.online/README.md)
 - ### [forensic-night.cesnet.cz](./forensic-night.cesnet.cz/README.md)
 - ### [ctf.dragonsector.pl](./ctf.dragonsector.pl/README.md)
