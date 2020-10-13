@@ -10,7 +10,10 @@ Good luck!
 
 #### Solution:
 
+- inspect the provided `downloaded_file.pcap` for HTTP trafic and dump all the binarry files
+- all binaries timeout on connection except the `linux_core_update.bin` that accepts `ip` and `port` as args, thus use args from `attachement_analysis` challenge
 ```bash
+./linux_core_update.bin -ip 78.128.216.92 -p 20210
 ```
 
 ---
