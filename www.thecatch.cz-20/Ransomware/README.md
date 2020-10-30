@@ -28,6 +28,7 @@ uncompyle6 -o ./ ./ransomvid_20.pyc
 ```
 
 - in souces we see the the format of encrypted file `MAGIC HEADER` + `ENCRYPTED KEY` + `ORIOG DATA LEN` + `ENCRYPTED DATA`
+
 ```python
 def write_file(filename, key, data, orig_len):
     """
@@ -39,7 +40,9 @@ def write_file(filename, key, data, orig_len):
         fileh.write(orig_len.to_bytes(8, byteorder='big'))
         fileh.write(data)
 ```
+
 - after inspection the `enc` key that is used to encrypt data is generated via `rand` however `seed` is static
+
 ```python
 def main():
     """
@@ -62,7 +65,9 @@ def main():
         write_file('{}'.format(filename), enc_aeskey, enc_data, len(data))
 
 ```
+
 - we need to strip encrypted files of header `4 + 256 + 8` bytes and decrypt them in right order using the generated random keys
+
 ```python
 import argparse
 import random

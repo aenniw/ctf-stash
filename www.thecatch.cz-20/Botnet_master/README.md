@@ -38,8 +38,9 @@ with open('communication.txt', mode='r') as f:
 ```
 
 - after decoding the communication we can see that `kl5puyj43brf7iso` can perform commands: `wait` `download` `info` `execute`
+
 ```console
- message length       client         command                                 sha384 of $client + ;; + $command
+message length       client         command                                 sha384 of $client + ;; + $command
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 0000000000000168 kl5puyj43brf7iso;;wait;;*;;5;;944f8b5a851f3ee8c4c8d0a30ca2f2b94cc6a3371b9ca09c4634d2da4884c44e5afb7ea7329ce724e38d07d7a4ebcfeb
 0000000000000048 command accepted;;
@@ -66,7 +67,9 @@ with open('communication.txt', mode='r') as f:
 0000000000000180 kl5puyj43brf7iso;;execute;;*;;ls /etc;;b8d4cd29e64dbf3cec215e6444ef8d5eff5df0f75389fb564ecb13008a6738a681a1f3cfe1ef3699cd9a5809eb7fa9f6
 0000000000000048 command accepted;;
 ```
-- after replaying some of the `commands` we noticed that the server spits out `flag` for `kl5puyj43brf7iso;;info;;78.128.216.92.20220;;clients` sometimes
+
+- after replaying some of the `commands` we noticed that the server sometimes spits out `flag` for `kl5puyj43brf7iso;;info;;78.128.216.92.20220;;clients`
+
 ```python
 #!/usr/bin/env python2
 import base64
