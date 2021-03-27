@@ -9,13 +9,15 @@ My friend sent me this text file and said they put a flag inside. I opened it an
 #### Solution:
 
 ```bash
+file out.txt
+mv out.txt out.png
 ```
 
 ---
 
 <details><summary>FLAG:</summary>
 
-```
+```text
 utflag{file_extensions_mean_nothing}
 ```
 

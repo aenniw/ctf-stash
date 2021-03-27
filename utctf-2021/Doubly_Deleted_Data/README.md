@@ -8,14 +8,17 @@ We got a copy of an elusive hacker's home partition and gave it to someone back 
 
 #### Solution:
 
+We are presented with hard drive image. I think the chalange creator wanted us to recover partition and on it recover some deleted file or check command history or something, but I found simpler faster way...
+
 ```bash
+strings flash_drive.img | grep utflag
 ```
 
 ---
 
 <details><summary>FLAG:</summary>
 
-```
+```text
 utflag{d@t@_never_dis@ppe@rs}
 ```
 
