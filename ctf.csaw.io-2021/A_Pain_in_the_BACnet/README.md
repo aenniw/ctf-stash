@@ -8,7 +8,14 @@ Attached is a packet capture taken from a building management network. One of th
 
 #### Solution:
 
+- `pcap` contains communication of multiple sensors, with the their readings in `bacapp.present_value.real` field
+- sensors at the beginning of transmission propagate their `name` along side with their `instance_number` which could be used to assign value to sensor
+
 ```bash
+for sensor in $( tshark -r ./bacnet.pcap -T fields -e bacapp.object_name -e bacapp.instance_number -Y 'bacapp.object_name' | sort | uniq | tr '\t' -); do
+    tshark -r ./bacnet.pcap -T fields -e bacapp.present_value.real -Y "bacapp.present_value.real && bacapp.instance_number == ${sensor##*-}" | \
+        gnuplot -p -e "set title '${sensor%%-*}' offset 0,1; plot '<cat' with lines"
+done
 ```
 
 ---
