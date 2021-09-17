@@ -8,8 +8,13 @@ Credit goes to Deebs/Fini-mun for the artwork of the comics. [Fallout-New_Mobius
 
 #### Solution:
 
+- `stego-toolkit` reveals that one of the files `Page 7.png` contains additional data appended to `PNG`
 ```bash
+docker run -it --rm -v "$(pwd)":/data  -w /data dominicbreuker/stego-toolkit check_png.sh ./Page 7.png
 ```
+- after extracting if we see that its `ISO Media, MP4 v2 [ISO 14496-14]` file containing the flag
+
+![sonic.png](./sonic.png ":ignore")
 
 ---
 
