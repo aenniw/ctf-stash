@@ -42,10 +42,6 @@
 
 [dorsia1](./dorsia1/README.md ":include")
 
-## dorsia3
-
-[dorsia3](./dorsia3/README.md ":include")
-
 # recon
 
 ## PR3S3N70R
