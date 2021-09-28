@@ -6,7 +6,10 @@ I think some of my data has been stolen, can you help me? [notmyname.pcapng.7z](
 
 #### Solution:
 
+- inspecting the provided `pcap` reveals quite a lot `DNS` request that looks like `hex` encoded data, dumping them and decoding reveals flag in on of the packets
+
 ```bash
+tshark -r ./notmyname.pcapng -T fields -e  dns.qry.name  -Y 'dns && dns.txt && dns.qry.name.len == 102' | xxd -r -p
 ```
 
 ---
