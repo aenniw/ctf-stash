@@ -16,6 +16,8 @@ You might need this: `M3 UKW B`
 |   1   |    Q     |  A   |
 |   3   |    L     |  A   |
 
+To get the final flag set the `include foreign chars` option.
+
 ---
 
 <details><summary>FLAG:</summary>
