@@ -20,7 +20,7 @@ for dir in ${CTF_DIR}/*/; do
 
         mv ${dir}${CHALLENGE} ${dir%/*/*}
 
-        hash gh && \
+        hash gh 2>/dev/null && \
             gh issue create \
                 --title "[${CTF_NAME}] - ${CHALLENGE} writeup" \
                 --label "writeup" \
