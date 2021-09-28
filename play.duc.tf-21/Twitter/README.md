@@ -8,8 +8,9 @@ While you're there, why don't you give us a follow to keep up to date with DownU
 
 #### Solution:
 
-```bash
-```
+- going through `DUCTF` twitter posts reveals flag in one the posts
+
+![twitter.png](./twitter.png ":ignore")
 
 ---
 
