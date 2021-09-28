@@ -10,3 +10,6 @@ solve.py
 solve.java
 solve.c
 solve.sh
+
+*.gpr
+*.rep/

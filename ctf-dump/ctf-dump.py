@@ -42,13 +42,14 @@ md_appendix = '''
 
 
 class CTFdCrawl:
-    def __init__(self, team, passwd, url, overwrite):
+    def __init__(self, team, passwd, url, overwrite, solved):
         self.auth = dict(name=team, password=passwd)
         self.ses = session()
         self.entry = dict()
         self.keys = 'data'
         self.url = url
         self.overwrite = overwrite
+        self.solved = solved
         self.ch_url = self.url + '/api/v1/challenges'
         self.headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
@@ -101,22 +102,21 @@ class CTFdCrawl:
 
             if not self.entry.get(ch_cat):
                 self.entry[ch_cat] = {}
-                count = 1
-                print('\n [v]', ch_cat)
-            print('  {}. {}'.format(count, ch_name))
+            print(' [c] {} - {}'.format(ch_cat, ch_name))
 
             entries = {
                 ch_name: {
                     'ID': data['id'],
                     'Points': data['value'],
                     'Description': data['description'],
+                    'Solved': data['solved_by_me'] if 'solved_by_me' in data else False,
+                    'Connections': data['connection_info'] if 'connection_info' in data else None,
                     'Files': data['files'],
                     'Hint': data['hints']
                 }
             }
 
             self.entry[ch_cat].update(entries)
-            count += 1
 
     def createArchive(self):
         print('\n[+] Downloading assets . . .')
@@ -128,6 +128,10 @@ class CTFdCrawl:
         for key, val in self.entry.items():
             key = unidecode.unidecode(key)
             for keys, vals in val.items():
+                if self.solved and not vals['Solved']:
+                    print(keys, 'Skipping - Not solved')
+                    continue
+
                 keys = r.sub('', unidecode.unidecode(keys).strip())
                 directory = '{}/{}'.format(key, keys)
                 directory = directory.replace(' / ', '-').replace(' ', '_')
@@ -141,19 +145,27 @@ class CTFdCrawl:
 
                 reamde_path = '{}/README.md'.format(directory)
                 if not self.overwrite and os.path.exists(reamde_path):
-                    print('Skipping', directory)
+                    print(keys, 'Skipping - README.md')
                     continue
 
                 with open(reamde_path, 'w') as f:
                     f.write('#### Challenge:\n\n')
-                    f.write(vals['Description'].strip())
-                    if len(hint) > 0:
-                        f.write('\n\n##### Hints:\n{}'.format(', '.join(hint)))
+                    f.write(re.sub(
+                        r'\s*Author:\s.*(\s)*', '', vals['Description'].strip()
+                    ))
+
                     if len(files) > 0:
-                        f.write('\n\n##### Files:\n{}'.format(", ".join(
+                        f.write(' {}'.format(", ".join(
                             map(lambda f: '[{}](./{} ":ignore")'.format(f, f),
                                 map(lambda f: f.split('/')[-1].split('?')[0], files)))))
+
+                    if vals['Connections']:
+                        f.write('\n\n`{}`'.format(vals['Connections'].strip()))
+
+                    if len(hint) > 0:
+                        f.write('\n\n##### Hints:\n{}'.format(', '.join(hint)))
                     f.write(md_appendix)
+
                     print('%s/README.md has been created' % (directory))
 
                 for i in files:
@@ -181,11 +193,14 @@ def main():
     parser.add_argument('-o', '--overwrite', dest='overwrite',
                         action='store_true')
     parser.set_defaults(overwrite=False)
+    parser.add_argument('-s', '--solved', dest='solved',
+                        action='store_true')
+    parser.set_defaults(solved=False)
 
     args = parser.parse_args()
 
     ctf = CTFdCrawl(args.username, args.password, args.ctfd_url,
-                    args.overwrite)
+                    args.overwrite, args.solved)
     ctf.parseAll()
     ctf.createArchive()
 
