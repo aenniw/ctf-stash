@@ -10,8 +10,7 @@ Download the file [`parchment_transcription.zip`](./parchment_transcription.zip 
 
 #### Solution:
 
-```bash
-```
+- writing down all rows that contained first cat head reveals the flag 
 
 ---
 
