@@ -47,6 +47,12 @@ root@kali:~/Projects/CTF_tools/Sublist3r# python sublist3r.py -d try2hack.me
 www.try2hack.me
 secretsubdom.try2hack.me
 ```
+Riesenie 2: https://crt.sh/?q=try2hack.me -> secretsubdom.try2hack.me
+```
+secretsubdom.try2hack.me
+try2hack.me
+www.try2hack.me
+```
 
 ---
 
@@ -195,6 +201,8 @@ root@kali:~# curl http://127.0.0.1:8000/server-status
 
 [Server status](./04/server-status.png ":ignore") site contained hostname ` cardingphorum.com`, just `dig` it and you have the IP address.
 
+Postup 2: Rovno vyskusat znamu chybu adminov Torbrowser -> http://ixbttupkdzeamjjkjyeqwkdmoawirpvxvzez3t5htq2nia24bink53ad.onion/server-status 
+
 ---
 
 <details><summary>FLAG:</summary>
@@ -260,6 +268,13 @@ Subsequently we use [hashcat](https://hashcat.net/hashcat/) to crack this `NT ha
 ```bash
 hashcat -m 1000 -w 3 -o found.txt -a 3 --username NT_hash.txt -1 ?l?d?u ?1?1?1?1?1?1?1?1 -i --increment-min 1 --increment-max 8
 ```
+
+Postup 2: Alebo mozete rovno poskladat hash file z challenge & response
+```
+novakp:$NETNTLM$940f90ec96ce32ec$f08f68d22994da62bec36e26b0b11d81d90124735dddba60
+```
+A pouzit hashcat s hash modes 5500 -> NetNTLMv1 / NetNTLMv1+ESS
+
 
 And after few hours we get:
 
