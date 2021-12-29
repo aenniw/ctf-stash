@@ -10,7 +10,13 @@ Good Luck!
 
 #### Solution:
 
-```bash
+- inspecting the `ping` request from server reveals hint `Send ICMP type 8 code 0 and Epoch time in payload`, after sending crafted `ping` the flag is revealed
+
+```python
+from pythonping import ping
+import time
+
+ping('78.128.246.144', verbose=True, payload=str(int(time.time())))
 ```
 
 ---
