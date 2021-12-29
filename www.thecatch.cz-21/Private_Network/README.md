@@ -10,7 +10,14 @@ Good Luck!
 
 #### Solution:
 
+- expand the network subnet range to addresses and check each for response
+
 ```bash
+while read p; do 
+    echo -n "$p "; curl -x 78.128.216.8:3128 "http://$p" -v 2>&1 | grep 'HTTP/1.1 ';
+done <hosts.csv
+
+curl -x 78.128.216.8:3128 "http://10.20.35.11"
 ```
 
 ---
