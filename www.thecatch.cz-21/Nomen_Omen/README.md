@@ -10,7 +10,13 @@ Good Luck!
 
 #### Solution:
 
-```bash
+```powershell
+$Env:APPDATA="$pwd\"
+
+for (($i = 0); $i -lt 1000; $i++) { 
+    Get-ChildItem -recurse | Sort-Object -Descending LastWriteTime | select -First 1 | ForEach-Object {& $_.FullName} 
+}
+ls flag*
 ```
 
 ---
