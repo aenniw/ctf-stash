@@ -6,7 +6,7 @@ Using the vines, the two Legends climb to the threshold of the temple. But an ea
 
 #### Solution:
 
-- analyzing the provided binary reveals that its `Electon` thus, its content can be extracted via `npx asar extract app.asar ./expanded/`
+- analyzing the provided binary reveals that its `Electron` thus, its content can be extracted via `npx asar extract app.asar ./expanded/`
 - here we can see that the game sends user keystrokes as codes `69oUki78` via `TCP` ending with `Game_Over`, this is then check and decrypted via `server`
 - all we need to do then is to determine keystroke order so that `check` function passes to obtain the flag
 
