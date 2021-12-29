@@ -10,7 +10,37 @@ We want to play a game with you. The mission is simple: you need to guess our fl
 
 #### Solution:
 
-```bash
+- the flag can be leaked/guessed based on the REST endpoint compare which is based on [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+
+```python
+import requests
+import string
+
+flag = (['_'] * 28)
+s = requests.session()
+
+
+def check():
+    resp = s.post('https://cat-step.disasm.me',
+                  data={'flag': 'spbctf{'+''.join(flag)+'}'})
+    return resp.json()['length']
+
+
+len = 28
+for i in range(0, 28):
+    len = check()
+    for c in string.printable:
+        cc = flag[i]
+        flag[i] = c
+
+        if check() >= len:
+            flag[i] = cc
+            continue
+        else:
+            break
+    print(len, ''.join(flag))
+
+print('spbctf{'+''.join(flag)+'}')
 ```
 
 ---
