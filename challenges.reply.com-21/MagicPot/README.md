@@ -180,7 +180,7 @@ switchD_004015ae_caseD_5:
     - 4. D - Blow on the fire
     - 5. C - Cool the mix
 
-- last thing that remains are the names ans  order of the ingredients `items.txt`
+- last thing that remains are the names and order of the ingredients `items.txt`
 ```
 Bigfoot nail
 Unicorn hair
