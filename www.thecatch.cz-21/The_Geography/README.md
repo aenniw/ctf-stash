@@ -10,7 +10,11 @@ Good Luck!
 
 #### Solution:
 
+
 ```bash
+curl -cookie cookie.txt --cookie-jar cookie.txt http://challenges.thecatch.cz/geography
+# Fetch the appropriate proxy server based on response from  https://www.proxynova.com/proxy-server-list/country-rs/
+curl -cookie cookie.txt --cookie-jar cookie.txt -x 93.86.63.73:8080 -L http://challenges.thecatch.cz/geography
 ```
 
 ---
