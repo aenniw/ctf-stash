@@ -6,11 +6,11 @@ In the meantime, Ironcode and R-boy head towards the Temple of the Master Bank. 
 
 #### Solution:
 
-- reversing the the `apk` reveals 3 REST endpoint:
+- reversing the the `apk` reveals 3 REST endpoints:
   - `https://gamebox1.reply.it/a3a1be5a7903afaf6a2573fb7aedd21a/answer` with parameters `question` and `answer`, this endpoint is however secured in some way
   - `https://gamebox1.reply.it/a3a1be5a7903afaf6a2573fb7aedd21a/open_ticket` with parameter `path`
   - `https://gamebox1.reply.it/a3a1be5a7903afaf6a2573fb7aedd21a/aboutus` -> `Web page under construction. Send us the full path using the dedicated area on the app so we can debug the specific file.`
-- also `OkHttp` client is secured via certificate pinning, thus to find out what the `apk` consists of we need to get rid of it and replace it with `BurpSuite` proxy cert see [Bypass OkHTTP CertificatePinner on Android](https://medium.com/@z2hteam/bypass-okhttp-certificatepinner-on-android-a085b8074e25)
+- also `OkHttp` client is secured via certificate pinning, thus to find out what the `apk` consists of we need to get rid of it and replace it with `BurpSuite` proxy cert - see [Bypass OkHTTP CertificatePinner on Android](https://medium.com/@z2hteam/bypass-okhttp-certificatepinner-on-android-a085b8074e25)
 
 ```bash
 # convert cert
@@ -91,8 +91,7 @@ while len(hashes) != len(questions):
 
 ```
 
-- dumping all the images revealed that on of them was not encoded `5eb92a061cd3c50928641e3b3d05380b.jpg` and also contains `URL` set in metadata
-
+- dumping all the images revealed that one of them was not encoded `5eb92a061cd3c50928641e3b3d05380b.jpg` and also contains `URL` set in metadata.  Submitting this URL to the "debug" endpoint as hinted in the `aboutus` endpoint reveals the flag.
 
 ```bash
 exiftool ./dumps/5eb92a061cd3c50928641e3b3d05380b.jpg # URL                             : /top_actors/leeno_bunphy.jpg
