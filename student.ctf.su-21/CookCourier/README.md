@@ -20,8 +20,7 @@ Submit here the courier’s email.
 
 #### Solution:
 
-```bash
-```
+The provided site contains link to `PDF` file stored on `Google drive`. Opening the `Details` panel of the google drive and hovering over the author's name reveals his email address.
 
 ---
 
