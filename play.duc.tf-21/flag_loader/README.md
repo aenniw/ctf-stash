@@ -8,7 +8,8 @@ What more could you ask for than a program that loads the flag for you? Just ans
 
 #### Solution:
 
-- decompiling reveals that we need to pass 3 checks and then we wait for flag for `X` seconds based on the result of the check functions
+- decompiling reveals that we need to pass 3 checks and then we wait for the flag for `X` seconds based on the result of the check functions
+
     ```c
     void main()
     {
@@ -93,7 +94,7 @@ What more could you ask for than a program that loads the flag for you? Just ans
     return (local_18 - local_1c) * (local_20 - local_24) & 0xffff;
     }
     ```
-  - 4. while solving these equation we need to provide solutions in a way that `result1 * result2 * result3` is ideally zero as this will delay retrieval of flag
+  - 4. while solving these equation we need to provide the solutions in a way that `result1 * result2 * result3` is ideally zero as this will delay retrieval of the flag
 
 ```python
 #!/usr/bin/env python3
