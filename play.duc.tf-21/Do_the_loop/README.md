@@ -4,14 +4,15 @@ Do the loop doop doop...
 
 Flag format: The STRING you end up with after solving challenge, case insensitive. [monorail.wav](./monorail.wav ":ignore")
 
-`nc pwn-2021.duc.tf 31919`
-
 ---
 
 #### Solution:
 
-```bash
-```
+- audio recording contains `morse` code mixed with song, in the spectrogram we can see it around 1k Hz
+
+![spectrogram](./spectrogram.png ":ignore")
+
+- decoding it reveals flag `.. -.-. --- ..- .-.. -.. .-.. .. ... - . -. - --- - .... .. ... --- -. .-.. --- --- .--. .- .-.. .-.. -.. .- -.--` [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Morse_Code('Space','Line%20feed')&input=Li4gLS4tLiAtLS0gLi4tIC4tLi4gLS4uIC4tLi4gLi4gLi4uIC0gLiAtLiAtIC0tLSAtIC4uLi4gLi4gLi4uIC0tLSAtLiAuLS4uIC0tLSAtLS0gLi0tLiAuLSAuLS4uIC4tLi4gLS4uIC4tIC0uLS0)
 
 ---
 
