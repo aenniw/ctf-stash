@@ -6,10 +6,11 @@ Veronica sent a message to her client via their website's Contact Us page. Can y
 
 #### Solution:
 
-- after `pcap` dencrypting the `ssl` traffic we see what pages `Veronica` visited, one of them was `diskretedevelopment.com/contact-us.html` that contains `form`
+- after decrypting the `ssl` traffic in provided `pcap`, we see what pages `Veronica` visited. One of them was `diskretedevelopment.com/contact-us.html` that contains `form`
 ![contact-us.png](./contact-us.png ":ignore")
 
-- based on this we try to look for `POST` request for this form via filter `http2 && json` that reveals the flag in one of the request
+- based on this, we try to look for `POST` requests for this form using filter `http2 && json`. That reveals the flag in one of the requests:
+
 ```json
 {
     "websiteId": "19460325-6441-4243-8b04-b46ca980c66e",
