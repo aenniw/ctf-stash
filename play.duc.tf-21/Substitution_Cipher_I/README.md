@@ -6,7 +6,7 @@ Just a simple substitution cipher to get started... [substitution-cipher-i.sage]
 
 #### Solution:
 
-- using the supplied `cipher` translation table can be build via encrypting `0123456789abcd...` printable characters
+- using the supplied `cipher`, a translation table can be build by encrypting `0123456789abcd...` printable characters
 
 ```python
 e = [ ord(c) for c in '疗窇羑蒵觳轋钽驉鿯ꖯ𝻷𞣡🋥🴃𠜻𡆍𡯹𢙿𣄟𣯙𤚭𥆛𥲣𦟅𧌁𧹗𨧇𩕑𪃵𪲳𫢋𬑽𭂉𭲯𮣯𯕉㞷㬡㺥䉃䗻䧍䶹冿嗟娙幭招杣氅烁ꮉ녽랋붳쏵쩑탇𚖝𚻫𛡓𜇕𜭱𝔧𰆽𰹋𱫳흗玲𐃙𐠟𐽿𑛹𑺍𒘻𒸃𓗥𓷡𔗷𔸧𕙱𕻕𖝓𖿫𗢝𘅩𘩏𙍏𙱩']
