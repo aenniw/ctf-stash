@@ -6,12 +6,14 @@ Our machine that makes QR Codes started playing up then it just said "PC LOAD LE
 
 #### Solution:
 
-- extract frames from `gif`
+- extract the QR code frames from `gif`
+
 ```bash
 convert -coalesce challenge.gif out-%05d.png
 ```
 
-- merge frames with same color together
+- stich the frames with the same color together
+
 ```python
 from PIL import Image
 import glob
@@ -42,7 +44,8 @@ for f in files:
     os.remove(f)
 ```
 
-- two QR contained `base64` segments, thus decode and profit
+- two QR codes contained `base64` segments, thus decode them and profit
+
 ```bash
 echo -n $(zbarimg qr_6.png qr_8.png  | sed 's/.*://g') | tr -d ' '  | base64 -d
 ```
