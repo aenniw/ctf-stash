@@ -8,7 +8,7 @@ Flag format: The STRING you end up with after solving challenge, case insensitiv
 
 #### Solution:
 
-- audio recording contains `morse` code mixed with song, under the spectrogram we can see it around 1k
+- audio recording contains `morse` code mixed with song, in the spectrogram we can see it around 1k Hz
 
 ![spectrogram](./spectrogram.png ":ignore")
 
