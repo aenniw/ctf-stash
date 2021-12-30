@@ -8,7 +8,7 @@ Fool me once, shame on you. Fool me twice, shame on me. [outBackdoor](./outBackd
 
 #### Solution:
 
-- decompiling the binary reveals hidden function `outBackdoor` which gives us shell access, as its `amd64` we also need to align the stack with `ret` address of `main` functions before our `IP` override
+- decompiling the binary reveals hidden function `outBackdoor` which gives us shell access, as it's `amd64` we also need to align the stack with `ret` address of `main` function before our `IP` override
 
 ```c
 void outBackdoor(void)
