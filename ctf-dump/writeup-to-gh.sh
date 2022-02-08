@@ -20,7 +20,7 @@ for chal in $(git status . | grep modified | sed 's/.*modified:[ \t]*//g' | sed 
         issue=$(gh issue list -a @me -S "${chal}" | cut -f 1)
         gh pr create \
             -B "${base}" \
-            -b "closes #${issue}" -l "writeup" \
+            -b "Closes #${issue}" -l "writeup" \
             -t "Add ${CTF} - ${chal} writeup" \
             --reviewer "${REVIEWER}" -a @me 
     fi
