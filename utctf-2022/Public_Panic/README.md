@@ -8,8 +8,7 @@ I don't think this company's security is all that great. Let's see if we can fin
 
 #### Solution:
 
-```bash
-```
+https://twitter.com/WadeColdwater/status/1501031410244669446/photo/1
 
 ---
 
