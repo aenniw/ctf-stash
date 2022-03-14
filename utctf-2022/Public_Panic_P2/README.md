@@ -10,7 +10,10 @@ For this challenge you can run nmap, but only against misc2.utctf.live on port 8
 
 #### Solution:
 
+- using the password from prev. challenge and using the user naming first letter of first name + surname reveals the flag
+
 ```bash
+sshpass -p defaultpw5678! ssh cshackleford@misc2.utctf.live -p 8622 cat flag.txt
 ```
 
 ---
