@@ -11,8 +11,18 @@ Pls check spam if you don't see the reply email within 5 minutes.
 
 #### Solution:
 
-```bash
-```
+- looking up `EddKing6` via `duckduckgo` needed information to send the email
+  - https://github.com/eddking6/DogFeedScheduler/blob/main/quickstart.go
+  - https://www.linkedin.com/in/eddking6/
+  - https://twitter.com/eddking6
+
+Information:
+  - The name of his dog? -> `Spot`
+  - His favourite video game? -> `FactorIO`
+  - His alma mater? -> `Texas A&M University `
+  - His Role at his company? -> `CISO (Chief Information Security Officer) `
+  - His favorite food? -> `Cacio e Pepe / Brownies`
+  - His Email? -> `blobcorpciso@gmail.com `
 
 ---
 
