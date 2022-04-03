@@ -6,7 +6,7 @@ How hard could it be? Just guess the [flag](https://flagle.mc.ax/).
 
 #### Solution:
 
-- we need to guess six fields each up to 5 characters, and validate it via `wasm` and `js` checks, thus reversing it will reveals the flag
+- we need to guess six fields each up to 5 characters, and validate it via `wasm` and `js` checks, thus reversing it will reveal the flag
 - reversing [flag-checker.wasm](./flag-checker.wasm ":ignore") via [wabt](https://github.com/WebAssembly/wabt/releases/tag/1.0.24) we can see the logic for fields 1,2,3,5,6
 
 
@@ -93,12 +93,13 @@ export function validate_6(a:int, b:int, c:int, d:int, e:int):int {
 
 ```
 
-- the 4 field is validated in obfuscated `js`
+- the 4-th field is validated in obfuscated `js`
 
 ```js
 function c(b){var e={'HLPDd':function(g,h){return g===h;},'tIDVT':function(g,h){return g(h);},'QIMdf':function(g,h){return g-h;},'FIzyt':'int','oRXGA':function(g,h){return g<<h;},'AMINk':function(g,h){return g&h;}},f=current_guess;try{let g=e['HLPDd'](btoa(e['tIDVT'](intArrayToString,window[b](b[e['QIMdf'](f,0x26f4+0x1014+-0x3707*0x1)],e['FIzyt'])()['toString'](e['oRXGA'](e['AMINk'](f,-0x1a3*-0x15+0x82e*-0x1+-0x1a2d),0x124d+-0x1aca+0x87f))['match'](/.{2}/g)['map'](h=>parseInt(h,f*f)))),'ZGljZQ==')?-0x1*0x1d45+0x2110+-0x3ca:-0x9*0x295+-0x15*-0x3+0x36*0x6d;}catch{return 0x1b3c+-0xc9*0x2f+-0x19*-0x63;}}
 ```
-- after some cleanup we can see that check depends also on `f` which reffers to guess try, so in short we need to find global function with length of 5, accepts 2 arguments `char` and `"int"` and needs to return number `1684628325`. Fotunatelly `wasm`  exports function `a()` that returns the value that we need.
+- after some cleanup we can see that the check depends also on `f` which reffers to guess try, so in short we need to find global function with length of 5, that accepts 2 arguments `char` and `"int"` and needs to return number `1684628325`. Fotunatelly `wasm`  exports function `a()` that returns the value that we need.
+
 ```js
 btoa(
     intArrayToString(
@@ -109,6 +110,7 @@ btoa(
     )
 ) === 'ZGljZQ==' // base64 value of dice
 ```
+
 - after some filtering of candidates via `Object.keys(window).filter(k => k.length === 5)` we land upon `cwrap`
 
 ---
