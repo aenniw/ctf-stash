@@ -9,7 +9,10 @@ _FYI, you do *not* need to do the 'Login as Admin' sequence in order, and later 
 
 #### Solution:
 
+- Button was disabled, but we are using `curl` anyway, so ...
+
 ```bash
+curl 'http://web1.utctf.live:2362/' --data-raw 'username=admin&pwd=admin'
 ```
 
 ---
