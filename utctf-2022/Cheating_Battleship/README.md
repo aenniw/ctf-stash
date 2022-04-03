@@ -8,7 +8,7 @@ Can you sink all the server's ships? Me thinks no :P
 
 #### Solution:
 
-- inspecting `websocket` traffic reveals that we send our map to `AI` player so that he can cheat, this is send as an `protobuf` [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')Protobuf_Decode('',false,false)&input=MDgxNDEwMTQxYTBhMGEwNDA4MDAxMDAwMTAwMDE4MDUxYTBhMGEwNDA4MDAxMDAxMTAwMDE4MDQxYTBhMGEwNDA4MDAxMDAyMTAwMDE4MDMxYTBhMGEwNDA4MDAxMDAzMTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA0MTAwMDE4MDIxYTBhMGEwNDA4MDAxMDA1MTAwMDE4MDUxYTBhMGEwNDA4MDAxMDA2MTAwMDE4MDQxYTBhMGEwNDA4MDAxMDA3MTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA4MTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA5MTAwMDE4MDI), sending the fake map allow us to play fairly and win
+- inspecting `websocket` traffic reveals that we send our map to `AI` player so that he can cheat. This is sent as an `protobuf` [CyberChef](https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')Protobuf_Decode('',false,false)&input=MDgxNDEwMTQxYTBhMGEwNDA4MDAxMDAwMTAwMDE4MDUxYTBhMGEwNDA4MDAxMDAxMTAwMDE4MDQxYTBhMGEwNDA4MDAxMDAyMTAwMDE4MDMxYTBhMGEwNDA4MDAxMDAzMTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA0MTAwMDE4MDIxYTBhMGEwNDA4MDAxMDA1MTAwMDE4MDUxYTBhMGEwNDA4MDAxMDA2MTAwMDE4MDQxYTBhMGEwNDA4MDAxMDA3MTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA4MTAwMDE4MDMxYTBhMGEwNDA4MDAxMDA5MTAwMDE4MDI), sending a fake map allows us to play "fairly" and win.
 
 ```js
 class WebSocket__ extends WebSocket {
