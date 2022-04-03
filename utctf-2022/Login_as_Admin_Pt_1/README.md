@@ -10,7 +10,10 @@ _FYI, you do *not* need to do the `Login as Admin` sequence in order, and later 
 
 #### Solution:
 
+- just change isAdmin cookie to `True`
+
 ```bash
+curl 'http://web1.utctf.live:2361/' -H 'Cookie: isAdmin=True' --data-raw 'username=admin&pwd=admin'
 ```
 
 ---
