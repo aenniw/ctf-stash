@@ -28,6 +28,7 @@
 - ### [aeroctf.com - 2021](./aero-ctf-2021/README.md)
 - ### [utctf.live - 2020](./utctf-2020/README.md)
 - ### [utctf.live - 2021](./utctf-2021/README.md)
+- ### [utctf.live - 2022](./utctf-2022/README.md)
 - ### [tuctf.com](./tuctf.com/README.md)
 - ### [ctfsecurinets.com - 2020](./ctfsecurinets-com-2020/README.md)
 - ### [ctfsecurinets.com - 2021](./ctfsecurinets-com-2021/README.md)
