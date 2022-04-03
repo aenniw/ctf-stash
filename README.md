@@ -38,7 +38,8 @@
 - ### [2021.angstromctf.com](./2021.angstromctf.com/README.md)
 - ### [ctf.csaw.io - 2021](./ctf.csaw.io-2021/README.md)
 - ### [play.duc.tf - 2021](./play.duc.tf-21/README.md)
-- ### [student.ctf.su - 2021](./student.ctf.su-21-21/README.md)
+- ### [student.ctf.su - 2021](./student.ctf.su-21/README.md)
+- ### [ctf.dicega.ng - 2022](./ctf.dicega.ng/README.md)
 
 ## CTF dumping
 
