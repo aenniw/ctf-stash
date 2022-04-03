@@ -8,8 +8,8 @@ Knock knock? Who's there? Another pastebin!! [knock-knock.mc.ax](https://knock-k
 
 #### Solution:
 
-- inspecting the code reveals that `token` is just `sha256` generated from `id` with seed `secret`, so if we can get the `secret` we can craft any token, also the flag always have `id=0` as it is the first node to be added
-- inspecting the `secret` initialization we can see that instead of invoking the function `crypto.randomUUID` its content is used as `secret` thus iv we use the same version of `node` we can craft any token we need
+- inspecting the code reveals that `token` is just `sha256` generated from `id` with seed `secret`, so if we can get the `secret` we can craft any token, also the flag always has `id=0` as it is the first node to be added
+- inspecting the `secret` initialization we can see that instead of invoking the function `crypto.randomUUID` its content is used as `secret` thus if we use the same version of `node` we can craft any token we need
 
 ```js
 const crypto = require('crypto');
