@@ -9,7 +9,11 @@ I think someone downloaded something from an http site. Luckily I caught the tra
 
 #### Solution:
 
-```bash
+We are provided with `PCAP` file. Even without the hint in the challenge name, I'd open it in `Wireshark` to see HTTP request for `flag.png`.
+Then its just clicking:
+
+```
+File -> Export Objects -> HTTP... -> (Select the one with flag.png) -> Save
 ```
 
 ---
