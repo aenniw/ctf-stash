@@ -9,8 +9,7 @@ I was able to capture some ftp traffic in this pcap. I wonder if there is any go
 
 #### Solution:
 
-```bash
-```
+Again we are provided with `PCAP` file. Opening it we see `FTP` traffic. The password of the `FTP` session is the flag.
 
 ---
 
