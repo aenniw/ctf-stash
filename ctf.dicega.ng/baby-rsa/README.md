@@ -11,7 +11,7 @@ I messed up prime generation, and now my private key doesn't work!
 Obviously this is another one of my favorite crypto challenges - `RSA`. We know `N`, `e` and the `ciphertext`. We also know that `(p-1) is divisible by e^2` and `(q-1)` is also `divisible by e^2`.
 This property is what breaks the decryption because the needed condition
 
-```gcd(d, (p - 1) * (q - 1)) == 1```
+`gcd(d, (p - 1) * (q - 1)) == 1`
 
 doesn't hold. (More math details [here](https://crypto.stackexchange.com/questions/33676/why-do-we-need-eulers-totient-function-varphin-in-rsa)). I lost a lot of time by trying to recover the message using the algorithm provided in this [article](https://eprint.iacr.org/2020/1059.pdf) but it would only work if the `p-1` / `q-1` were divisible by `e` not `e^2`. Luckily thanks to that article I found this great [script/repository](https://github.com/jvdsn/crypto-attacks/blob/4f650cf18a459accc0789dd1f0dbf77003de5093/attacks/rsa/non_coprime_exponent.py), which has a fallback method for higher powers of `e` using `Adleman-Manders-Miller and CRT`. I'm not gonna pretend that I have any idea about how the math works there, but editing that file a bit by feeding the numbers to that module gave up the flag:
 
