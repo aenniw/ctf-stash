@@ -7,6 +7,7 @@
 #### Solution:
 
 ```bash
+strings chall | grep actf -A 6 | tr -d "H\n"
 ```
 
 ---

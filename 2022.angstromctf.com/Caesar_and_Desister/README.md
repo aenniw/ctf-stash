@@ -6,8 +6,7 @@ After making dumb jokes about cryptography to all his classmates, clam got a cea
 
 #### Solution:
 
-```bash
-```
+From the challenge name pointing to `Caesar` and flag format, it is easy to find out that it is `ROT 8`.
 
 ---
 

@@ -6,8 +6,7 @@ My friend hasn't [learned](./shark2.pcapng ":ignore").
 
 #### Solution:
 
-```bash
-```
+Notice `photoshop` or `JFIF` in TCP traffic, save raw bytes as `flag.jpeg`.
 
 ---
 

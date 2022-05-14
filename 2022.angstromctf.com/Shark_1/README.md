@@ -7,8 +7,7 @@ My friend was passing notes during class. Can you find them?
 
 #### Solution:
 
-```bash
-```
+Just follow the TCP stream.
 
 ---
 

