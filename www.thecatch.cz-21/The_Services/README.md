@@ -10,8 +10,13 @@ Good Luck!
 
 #### Solution:
 
-```bash
+Running this `nmap` for service discovery:
+
 ```
+sudo nmap -sS -sV -sC -vv 78.128.216.6
+```
+
+Reveals three out of four parts of the flag in the `fingerprints` of various services open on the server (HTTP, SSH, Samba). The last discovered service was FTP. Simply connecting to it reveals the last part of the flag. Composing the parts and decoding the result as `base64` gets us the final flag.
 
 ---
 
