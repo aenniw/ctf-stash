@@ -13,8 +13,8 @@ Connect to it at `nc challs.actf.co 31400`.
 docker run --rm -it -v $(pwd):/work -w /work erlang io:format("~p~n",[beam_disasm:file("Elixir.Angstrom.CLI.beam")])
 ```
 
-- inspection of the decompiled code reveals that to retrieve the flag we need supply correct input that is static
-- in function `check` we see that we are comparing against `gjsfxpslt` string and out `input` is altered via function `-check/0-fun-0-` so that each `char` is incremented by `1`
+- inspection of the decompiled code reveals, that to retrieve the flag we need supply correct input that is static.
+- in function `check` we see, that we are comparing against `gjsfxpslt` string and our `input` is altered via function `-check/0-fun-0-` so that each `char` is incremented by `1`:
 
 ```elixir
     {function,check,0,9,
