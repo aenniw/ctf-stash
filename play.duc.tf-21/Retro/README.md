@@ -7,6 +7,7 @@ Our original logo was created in paint, I wonder what other secrets it hides? [o
 #### Solution:
 
 ```bash
+strings og.jpg | grep -oe 'DUCTF{.*}'
 ```
 
 ---

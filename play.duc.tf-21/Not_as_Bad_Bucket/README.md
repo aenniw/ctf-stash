@@ -8,7 +8,21 @@ Okay fine I admit it, we didn't invest in security in my previous website and we
 
 #### Solution:
 
+When trying similar approach as with `Bad Bucket`, we are getting error - `Anonymous caller does not have storage.objects.get access to the Google Cloud Storage object`. So we cant be anonymous, therefore we tried authenticating with my own google accout:
+
+
 ```bash
+gsutil config -f;
+gcloud auth login
+```
+
+After that the listing of the `Not as Bad bucket` worked like before:
+
+```bash
+gsutil ls gs://ductf-not-as-bad-ductf
+gsutil ls gs://ductf-not-as-bad-ductf/pics
+gsutil cp -r gs://ductf-not-as-bad-ductf/pics/ .
+cat ./flag.txt
 ```
 
 ---

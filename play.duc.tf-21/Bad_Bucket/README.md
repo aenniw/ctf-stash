@@ -6,7 +6,12 @@ Aw yea have you guys SEEN my new website... its nearly done I swear! I've upload
 
 #### Solution:
 
+Knowing the site is hosted on the `GCP bucket` I installed the `gsutils`, listed the bucket and got the file with the `flag`, all with the `anonymous access`:
+
 ```bash
+./bin/gsutil ls gs://the-bad-bucket-ductf
+./bin/gsutil ls gs://the-bad-bucket-ductf/buckets/
+curl https://storage.googleapis.com/the-bad-bucket-ductf/buckets/.notaflag
 ```
 
 ---

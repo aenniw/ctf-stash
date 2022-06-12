@@ -6,7 +6,11 @@ Found this service account key after the results of a pen test but we are runnin
 
 #### Solution:
 
+Using the provided `GCP` service account key, I tried to `gcloud secrets list`. It turned out there is one called `unused_data` but it was encrypted, so I also looked at `gcloud kms list`. There was a keyring with several kms keys, but after trying all of them, the `a-silver-key` revealed the flag:
+
 ```bash
+gcloud auth activate-service-account --key-file ~/Downloads/legacy.json
+gcloud secrets versions access "latest" --project ductf-lost-n-found --secret unused_data | base64 -d | gcloud kms decrypt --key=a-silver-key --keyring=wardens-locks --location=australia-southeast2 --project ductf-lost-n-found --ciphertext-file=- --plaintext-file=-
 ```
 
 ---

@@ -15,6 +15,7 @@ Flag format is `DUCTF{+61<number>}`
 #### Solution:
 
 ```bash
+whois 646f776e756e646572.xyz | grep "+61"
 ```
 
 ---

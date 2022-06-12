@@ -6,14 +6,15 @@ Between you and me, our sources say the ringleader was testing the ransomware th
 
 We think we may be able to setup a sting to apprehend the ringleader and retrieve the decryption key when they meet the accomplice at a dead drop in a nearby alleyway. Can you work out what the name of the street is?
 
-Flag format: `DUCTF{street_name}` [image.png](./image.png ":ignore")
+Flag format: `DUCTF{street_name}`
+
+![image.png](./image.png ":ignore")
 
 ---
 
 #### Solution:
 
-```bash
-```
+Googling for `australia skyscrapers` turns up [this image](https://www.alamy.com/the-panoramic-view-of-melbourne-downtown-skyscrapers-victoria-australia-image224295034.html) with the same buildings from different angle in Melbourne. After that, it is "only" the (tedious) matter of `google street view` to get the viewpoint right.
 
 ---
 
