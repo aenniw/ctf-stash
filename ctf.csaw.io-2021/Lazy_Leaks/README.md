@@ -6,8 +6,7 @@ Someone at a company was supposedly using an unsecured communication channel. A 
 
 #### Solution:
 
-```bash
-```
+Classic, easy `PCAP` challenge. After opening the file in `wireshark` I just scrolled through the traffic, noticed `TELNET`, opened it, and there was the flag, just laying there - unencrypted.
 
 ---
 
