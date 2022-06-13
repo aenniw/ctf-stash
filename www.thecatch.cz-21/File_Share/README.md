@@ -8,7 +8,7 @@ the file sharing service at `http://78.128.216.5:65080` looks as valuable source
 
 #### Solution:
 
-Following the ling redirects us to URL:
+Following the link redirects us to URL:
 
 `http://78.128.216.5:65080/smbreader?server=localhost&file=message.txt`
 
