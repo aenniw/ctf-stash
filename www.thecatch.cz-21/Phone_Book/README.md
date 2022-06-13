@@ -121,7 +121,7 @@ python3 ./john/run/krb2john.py data.pdml > hash.txt
 john hash.txt
 ```
 
-But they return an error - `Unable to find kerberos.salt value. Please report this bug to us!`. Digging a bit into the `krb2john.py` code, we can see that this happens, when the `e-type` is not `23` (which isn't supported by this challenge, only `17` and `18` are) and when the `salt` for the hash is missing. Looking into the `data.pdml`, I see there a field with name `kerberos.info2_salt` but `krb2john.py` is looking for `kerberos.salt`. Patching it in the  `krb2john.py` and rerunning the commands sucessfully returns the password of the user `tytso` to be `garfunkel4`. With that we can login and the flag is found in `tytso`'s phone number.
+But they return an error - `Unable to find kerberos.salt value. Please report this bug to us!`. Digging a bit into the `krb2john.py` code, we can see that this happens, when the `e-type` is not `23` (which isn't supported by this challenge, only `17` and `18` are) and when the `salt` for the hash is missing. Looking into the `data.pdml`, I see there is a field with name `kerberos.info2_salt` but `krb2john.py` is looking for `kerberos.salt`. Patching it in the  `krb2john.py` and rerunning the commands sucessfully returns the password of the user `tytso` to be `garfunkel4`. With that we can login and the flag is found in `tytso`'s phone number.
 
 ```bash
 curl 'http://78.128.246.142/login' -s --data-raw 'username=tytso&password=garfunkel4' --cookie-jar cookies > /dev/null
