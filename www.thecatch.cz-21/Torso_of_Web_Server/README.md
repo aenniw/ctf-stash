@@ -45,7 +45,7 @@ python3 KeyTabExtract/keytabextract.py ~/Downloads/apache2.keytab
         AES-128 HASH : 3746ead7ac5622b631b397f3e949da14
 ```
 
-After googling for the phrases `silver ticket` and `TGS` from the `ticketer_mit.c`, we realized that this gives us enough information to perform `kerberos silver ticket attack` (using Apache's encryption key) to create `Ticket Granting Service (TGS)` to user `euripides`. Using the `ticketer.py` script from the [impacket](https://github.com/SecureAuthCorp/impacket.git) suite, we create the `TGS` and send the request for the flag via `curl`.
+After googling for the phrases `silver ticket` and `TGS` from the `ticketer_mit.c`, we realized that this gives us enough information to perform `kerberos silver ticket attack` (using Apache's encryption key) to create `Ticket Granting Service (TGS)` to user `euripides`. Using the `ticketer.py` script from the [impacket](https://github.com/SecureAuthCorp/impacket.git) suite, we create the `TGS` and send the request for the flag via `curl`. *Note that the `ticketer.py` script needs also the parameter `-domain-sid` but that is not really used in this case, it is there only because it is set as `required` in the parameter processing.*
 
 
 ```bash
