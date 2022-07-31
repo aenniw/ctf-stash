@@ -22,6 +22,7 @@
 - ### [challenges.reply.com - 2019](./challenges.reply.com-19/README.md)
 - ### [challenges.reply.com - 2020](./challenges.reply.com-20/README.md)
 - ### [challenges.reply.com - 2021](./challenges.reply.com-21/README.md)
+- ### [ctf.thefewchosen.com - 2022](./ctf.thefewchosen.com-2022/README.md)
 - ### [ctf.ritsec.club](./ritsec_ctf_2019/README.md)
 - ### [venividivici.iitdh.ac.in](./venividivici.iitdh.ac.in/README.md)
 - ### [aeroctf.com - 2020](./aero-ctf-2020/README.md)
