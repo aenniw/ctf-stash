@@ -1,4 +1,4 @@
-**[S㎩mAndFlags CTF](https://ctf.spamandhex.com/)**
+**[CTF TheFewChosen](http://ctf.thefewchosen.com/)**
 
 ---
 

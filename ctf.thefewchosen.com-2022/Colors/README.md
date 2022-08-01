@@ -13,16 +13,23 @@ The app connects to a server to upload the data. What is the URL?
 
 #### Solution:
 
+```bash
+binwalk -Me colors.ipa
+cd _colors.ipa.extracted/Payload/colors.app/
+strings colors | grep -i http
+strings colors | grep -i frameworks
+```
+
 ---
 
 <details><summary>FLAG:</summary>
 
 ```
-FLAG1
+http://localhost:8080
 ```
 
 ```
-FLAG2
+contacts
 ```
 
 </details>
