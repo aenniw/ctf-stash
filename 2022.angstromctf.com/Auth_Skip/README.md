@@ -8,7 +8,10 @@ Clam was doing his angstromCTF flag% speedrun when he ran into [the infamous tim
 
 #### Solution:
 
+The server checks the value of cookie user and if the value is equal to admin it returns the flag value. We set the cookie value using curl.
+
 ```bash
+curl -v --cookie "user=admin" https://auth-skip.web.actf.co/ 
 ```
 
 ---

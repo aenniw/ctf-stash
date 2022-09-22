@@ -6,8 +6,8 @@ The new Justice League movies nerfed the Flash, so clam made [his own rendition]
 
 #### Solution:
 
-```bash
-```
+Open up the devtools in browser and set break on subtree modification on the div where the flag is, then read the flag value.
+
 
 ---
 
