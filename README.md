@@ -40,6 +40,7 @@
 - ### [2022.angstromctf.com](./2022.angstromctf.com/README.md)
 - ### [ctf.csaw.io - 2021](./ctf.csaw.io-2021/README.md)
 - ### [play.duc.tf - 2021](./play.duc.tf-21/README.md)
+- ### [play.duc.tf - 2022](./play.duc.tf-22/README.md)
 - ### [student.ctf.su - 2021](./student.ctf.su-21/README.md)
 - ### [ctf.dicega.ng - 2022](./ctf.dicega.ng/README.md)
 
