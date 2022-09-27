@@ -3,7 +3,7 @@
 # NOTE: snap install gh to create GH issues
 # ./ctf-to-gh.sh ./ctf-directory/ https://ctf-url/
 
-CTF_DIR=${1%/*}
+CTF_DIR=${1%/}
 CTF_URL=${2}
 CTF_NAME=${CTF_DIR##*/}
 CTF_SUMMARY=${CTF_DIR}/README.md
@@ -24,7 +24,8 @@ for dir in ${CTF_DIR}/*/; do
             gh issue create \
                 --title "[${CTF_NAME}] - ${CHALLENGE} writeup" \
                 --label "writeup" \
-                --body ""
+                --body "" && \
+            { echo "Github - ${CHALLENGE} created"; sleep 1; }
     done
     rmdir ${dir}
 done
