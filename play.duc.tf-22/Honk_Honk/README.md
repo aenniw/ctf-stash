@@ -11,8 +11,7 @@ Note: Solving this challenge unlocks another OSINT challenge.
 
 #### Solution:
 
-```bash
-```
+Just input the license plate `23HONK` to this [site](https://free-rego-check.service.nsw.gov.au/?isLoginRequired=true#).
 
 ---
 

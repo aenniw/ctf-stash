@@ -6,8 +6,7 @@ O_O I spy with my little eye, the largest CTF in the southern hemisphere's twitt
 
 #### Solution:
 
-```bash
-```
+Just went to DUCTF's [twitter](https://twitter.com/DownUnderCTF). The flag was part of the account description.
 
 ---
 

@@ -6,8 +6,7 @@ Have you joined the [DUCTF Discord](https://duc.tf/discord) yet? There are some 
 
 #### Solution:
 
-```bash
-```
+Just go to `#memes` channel in the `DownUnderCTF` discord and there is a `GIF` with flag at the time of the beginning of the CTF.
 
 ---
 

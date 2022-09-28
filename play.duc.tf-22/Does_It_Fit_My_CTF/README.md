@@ -11,8 +11,7 @@ Flag example: `DUCTF{LofiGirl}`
 
 #### Solution:
 
-```bash
-```
+Since the challenge description refers to the [previous challenge](../Honk_Honk/README.md), I googled for the type of the car that was found in it - `NISSAN MARCH 3 DOOR TURBO SEDAN youtube` and landed at the channel [MightyCarMods](https://www.youtube.com/watch?v=B8f2n1OOAgA&ab_channel=MightyCarMods).
 
 ---
 

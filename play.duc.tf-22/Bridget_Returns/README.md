@@ -10,8 +10,9 @@ Flag format: The name of the bridge with no spaces, case insensitive
 
 #### Solution:
 
-```bash
-```
+I remembered, that I have once read about a [site](https://what3words.com/download.pausing.counterparts) that translates words into coordinates.
+
+The bridge name is the answer.
 
 ---
 
