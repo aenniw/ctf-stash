@@ -6,7 +6,37 @@ Top secrets lie behind this definitely secure JS lock. [js-lock.html](./js-lock.
 
 #### Solution:
 
-```bash
+- reversing the `javascript` blocks reveals that the key is encoded in nested array structure, backtracking the structure in browser decrypts flag
+
+```js
+lookups = {}
+
+function lookup(data, indexes = []) {
+    if (typeof data === 'number' && lookups[data] === undefined) {
+        lookups[data] = indexes;
+    } else if (Array.isArray(data)) {
+        data.forEach((candidate, index) => {
+            lookup(candidate, [...indexes, index])
+        })
+    }
+}
+function solver() {
+    for (let i = 1; i <= 1337; i++) {
+        const indexes = lookups[i];
+        const key = indexes.map((v) => {
+            for (let i = 0; i < v; i++) {
+                S.key += '1'
+            }
+            S.key += '0'
+        });
+        console.log('solved', i)
+    }
+
+}
+
+lookup(LOCK);
+solver();
+win();
 ```
 
 ---
