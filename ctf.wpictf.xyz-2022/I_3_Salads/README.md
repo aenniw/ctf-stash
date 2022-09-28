@@ -10,8 +10,7 @@ Creator: emalcxe!
 
 #### Solution:
 
-```bash
-```
+Classic `ROT` cipher with the offset of `23`.
 
 ---
 
