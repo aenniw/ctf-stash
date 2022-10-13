@@ -1,8 +1,8 @@
 #### Challenge:
 
-Hi, promising candidate, 
+Hi, promising candidate,
 
-our customers paying by bitcoin to our wallet `bc1q8vnufzpyurlnvrxavrn2vxe5z0nafrp2d8nzng` can get their package pickup code on [http://pay-check.mysterious-delivery.thecatch.cz](http://pay-check.mysterious-delivery.thecatch.cz) by entering their wallet ID. 
+our customers paying by bitcoin to our wallet `bc1q8vnufzpyurlnvrxavrn2vxe5z0nafrp2d8nzng` can get their package pickup code on [http://pay-check.mysterious-delivery.thecatch.cz](http://pay-check.mysterious-delivery.thecatch.cz) by entering their wallet ID.
 
 Find out the pickup code for package that has not yet been claimed, although it was already paid for on Aug 8th 2022.
 

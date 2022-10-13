@@ -6,7 +6,11 @@ the AI is preparing some kind of employee streamlining portal on [http://user-in
 
 Your task is to break into the web and find interesting information on the server.
 
-May the Packet be with you! 
+May the Packet be with you!
+
+<center>
+<table><th bgcolor=#FFFF00>Note: Solving this challenge will open 1 new challenge.</th></table></center>
+<br>
 
 ---
 

@@ -1,9 +1,9 @@
 #### Challenge:
 
-Hi, promising candidate, 
+Hi, promising candidate,
 
-a lot of internal system is accessible only via VPN. You have to install and configure OpenVPN properly. Configuration file can be downloaded from  CTFd's link [VPN](https://www.thecatch.cz/vpn). Activate VPN and visit testing page [http://candidate-test.mysterious-delivery.tcc](http://candidate-test.mysterious-delivery.tcc), where the control code is.
- 
+a lot of internal system is accessible only via VPN. You have to install and configure OpenVPN properly. Configuration file can be downloaded from  CTFd's link [VPN](./ctfd_ovpn.ovpn ":ignore"). Activate VPN and visit testing page [http://candidate-test.mysterious-delivery.tcc](http://candidate-test.mysterious-delivery.tcc), where the control code is.
+
 May the Packet be with you!
 
 ---
