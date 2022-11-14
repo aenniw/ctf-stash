@@ -12,8 +12,7 @@ May the Packet be with you!
 
 #### Solution:
 
-```bash
-```
+- lookup the wallet ID on [www.blockchain.com](https://www.blockchain.com/btc/address/bc1q8vnufzpyurlnvrxavrn2vxe5z0nafrp2d8nzng) and lookup the flag on the pickup portal
 
 ---
 
