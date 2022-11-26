@@ -8,11 +8,26 @@ Analyze content of zone and focus on any codes for our depot steel safes (AI has
 
 May the Packet be with you!
 
+Hint: The zone is secured by DNSSEC.
+
 ---
 
 #### Solution:
 
+Trying the zone transfer trick from the [last year](../../www.thecatch.cz-21/Domain_Name_System/README.md) didn't work. Investigating on the issue led me to [this SO question](https://serverfault.com/questions/935075/list-all-txt-records-for-a-doman), where some commenter mentions, that it is possible to walk DNS domain if its secured by `DNSSEC`, which is exactly what the challenge hint said.
+
+
 ```bash
+sudo apt-get install ldnsutils
+
+# Dumping all TXT records
+ldns-walk mysterious-delivery.tcc @ns1.mysterious-delivery.thecatch.cz | grep " TXT " | sort | uniq > ns.txt
+
+# Noticing record "depot-secret-upon-flag"
+dig @ns1.mysterious-delivery.thecatch.cz depot-secret-upon-flag.mysterious-delivery.tcc TXT
+
+# Decoding base64 that it contains:
+echo "RkxBR3tZcjMxLVhvWEUtNEZxOC02UElzfQ==" | base64 -d
 ```
 
 ---

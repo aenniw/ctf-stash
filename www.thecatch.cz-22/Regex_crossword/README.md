@@ -12,8 +12,9 @@ May the Packet be with you!
 
 #### Solution:
 
-```bash
-```
+We are given `ZIP` with PDF containing regex crossword puzzle. Simply solving it gets us the FLAG:
+
+![regex_solution.jpg](./regex_solution.jpg ":ignore")
 
 ---
 
