@@ -9,8 +9,7 @@ Flag example: `DUCTF{SydneyOperaHouse}` [OSINTGEO.jpg](./OSINTGEO.jpg ":ignore")
 
 #### Solution:
 
-```bash
-```
+- looking up places with `suppercellar` drive thru revels the actual [place](https://goo.gl/maps/TaSSTzsn22XTxw216)
 
 ---
 
