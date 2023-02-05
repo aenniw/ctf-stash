@@ -13,8 +13,7 @@ In the previous IS, each package had his own domain name (for example, `ID 2022-
 
 #### Solution:
 
-```bash
-```
+- lookup the package via [WaybackMachine](https://web.archive.org/web/20220808090332/http://tracking-2022-0845.mysterious-delivery.thecatch.cz/)
 
 ---
 
