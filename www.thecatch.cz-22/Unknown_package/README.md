@@ -14,7 +14,10 @@ May the Packet be with you!
 
 #### Solution:
 
+- crop the bar codes via any `img` tool and scan the codes, one of them reveals the flag. [bar-1.png](./bar-1.png ":ignore")
+
 ```bash
+zbarimg ./bar-1.png
 ```
 
 ---
