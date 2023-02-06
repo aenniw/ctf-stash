@@ -14,7 +14,17 @@ May the Packet be with you!
 
 #### Solution:
 
+- after some investigation regarding the mobile usage, we realize, that using the mobile emulation in browser actually reveals functional UI
+- inspecting it deeper, we find out that all we need is just valid session and `The Catcher/1.0/2022 (MessengerOS)` `User-Agent` and we can retrieve the flag
+
 ```bash
+curl 'http://messenger-portal.mysterious-delivery.thecatch.cz/?messenger-jobs' \
+  -H 'Cookie: PHPSESSID=0d7c896135502b28659a74b4bd75a388' \
+  -H 'Referer: http://messenger-portal.mysterious-delivery.thecatch.cz/' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: User-Agent: The Catcher/1.0/2022 (MessengerOS)' \
+  --compressed \
+  --insecure
 ```
 
 ---
