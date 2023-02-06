@@ -14,8 +14,31 @@ May the Packet be with you!
 
 #### Solution:
 
-```bash
+- all the packages have color coding based on their state and team, all that we need to do, is to check all the available images and check the color of the package and team background. This is pretty simple, as all the images are generated from the same template, so we need to check just 2 pixels for each image, that we specifically select.
+
+```python
+from PIL import Image
+
+def check(file):
+    with Image.open(file, 'r') as img:
+        pixels = img.load()
+        backgound = pixels[img.size[0]/2, 0]
+        package = pixels[img.size[0]/10,img.size[1]/2]
+
+        if backgound[0] > backgound[1] and backgound[0] > backgound[2] and backgound[0] > 200\
+            and package[1] > package[0] and package[1] > package[2]:
+            print(file, backgound)
+
+from pathlib import Path
+
+pathlist = Path("./").glob('**/*.png')
+for path in pathlist:
+     path_in_str = str(path)
+     if path_in_str.endswith('.png'):
+        check(path_in_str)
 ```
+
+- after looking up the code we can retrieve the flag from delivery portal
 
 ---
 
