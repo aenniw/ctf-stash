@@ -9,6 +9,7 @@ By Caleb (@eden.caleb.a#6541 on Discord) [readingList](./readingList ":ignore")
 #### Solution:
 
 ```bash
+strings ./readingList | grep utflag
 ```
 
 ---
