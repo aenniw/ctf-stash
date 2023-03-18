@@ -10,6 +10,7 @@ By Robert Hill (@Rob H on discord)
 #### Solution:
 
 ```bash
+nc betta.utctf.live 8080
 ```
 
 ---
