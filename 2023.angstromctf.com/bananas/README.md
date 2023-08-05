@@ -9,7 +9,8 @@ A friend sent [this](./Elixir.Bananas.beam ":ignore") to me. Can you help me fin
 
 #### Solution:
 
-- reversing the binary via reveals what we are expected to pass as input `elixir` can be simply reversed via
+- reversing the binary with `ghydra` reveals what we are expected to pass as input `elixir` can be simply reversed via:
+
 ```
 docker run --rm -it -v $(pwd):/work -w /work erlang:25
 1> file:write_file("./Elixir.Bananas.erl", io_lib:fwrite("~p.\n", [beam_disasm:file("./Elixir.Bananas.beam")])).
@@ -199,11 +200,11 @@ docker run --rm -it -v $(pwd):/work -w /work erlang:25
           {jump,{f,29}}]}]}.
 ```
 
-- in the course we see that in `main` we read the user input convert it and compare against magic value, if we guessed that we get the flag
-  - `convert_input` will `trim` the input and the `split` it by ` ` 
-  - `to_integer` will re-orders the elements and parses int from the last element
+- in the course we see that in `main` we read the user input, convert it and compare it against magic value, if we guessed that, we get the flag.
+  - `convert_input` will `trim` the input and the `split` it by `spaces` 
+  - `to_integer` will re-orders the elements and parses `int` from the last element
   - `check` will compare the array if the first element is equal to `bananas` and if the `int` passes following equation `((x + 5) * 9) - 1 = 971`
-- with the information mentioned above we can revers the check and just paste the `103 bananas` in to remote server
+- with the information mentioned above, we can reverse the check and just paste the `103 bananas` into the remote server
 
 ---
 
