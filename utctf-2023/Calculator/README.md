@@ -10,7 +10,7 @@ By Alex (@Alex_ on discord)
 
 #### Solution:
 
-- in this challenge we solved by collaborative efforts of other contestant as the container was shared for everyone all of the mess and attempts were accessible cross teams
+- we solved this challenge by collaborative efforts of other contestant as the container was shared for everyone. All of the mess and attempts were accessible across all teams.
 - first 3 passwords `PuXqj7n4WNZzStnWbtPv` `Krdi9yQuY8mHoteZDCF5` `E46Dnqb5enAMgGArbruu` can be easily obtained just via following payload `exec('import os; os.system(\"cat *.txt;\"); print()')`
 
 ```bash
