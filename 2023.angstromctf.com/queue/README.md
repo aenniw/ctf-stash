@@ -8,7 +8,7 @@ I just learned about stacks and queues in DSA! `nc challs.actf.co 31322`
 
 #### Solution:
 
-- reversing the binary in `ghidra` reveals that we need to leak the `stack` content via `fprint` as out input is later printed via it
+- reversing the binary in `ghidra` reveals, that we need to leak the `stack` content via `fprint` as our input is later printed through it:
 ```c
 void main(void)
 
