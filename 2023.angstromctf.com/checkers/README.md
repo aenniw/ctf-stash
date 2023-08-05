@@ -6,7 +6,8 @@
 
 #### Solution:
 
-```
+```bash
+strings ~/Downloads/checkers | grep actf
 ```
 
 ---

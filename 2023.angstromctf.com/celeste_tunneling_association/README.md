@@ -9,7 +9,10 @@
 
 #### Solution:
 
-```
+The provided source requires `header` `host: flag.local` so:
+
+```bash
+curl 'https://pioneer.tailec718.ts.net/' -H 'host: flag.local'
 ```
 
 ---

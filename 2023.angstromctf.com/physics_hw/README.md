@@ -6,8 +6,9 @@ My physics teacher also loves puzzles. Maybe my [homework](./physics_hw.png ":ig
 
 #### Solution:
 
-```
-```
+After opening image in `stegsolve`, I noticed there is some noise in the top left corner in the `0-th bitplane` of each RGB color. Extracting the data from it reveals the flag:
+
+![image.png](./image.png)
 
 ---
 
