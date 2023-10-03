@@ -13,6 +13,13 @@ The webs are running on server `web-protocols.cns-jv.tcc`.
 #### Solution:
 
 ```bash
+nmap -p0-65535 web-protocols.cns-jv.tcc
+
+{
+    echo "GET / HTTP/0.9" | nc web-protocols.cns-jv.tcc 5009 | sed "s/.*SESSION=//" | sed 's/;.*//' | head -n 3 | tail -n 1 | tr -d '\n';
+    curl  http://web-protocols.cns-jv.tcc:5011 -v  2>&1 | grep SESSION | sed "s/.*SESSION=//" | sed 's/;.*//' | tr -d '\n';
+    curl  http://web-protocols.cns-jv.tcc:5020 -v  2>&1 | grep SESSION | sed "s/.*SESSION=//" | sed 's/;.*//' | tr -d '\n';
+} | base64 -d
 ```
 
 ---
