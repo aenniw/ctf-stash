@@ -13,9 +13,39 @@ Download the [cat_code.zip](./cat_code.zip ":ignore").\
 
 #### Solution:
 
-```bash
-```
+- after initial run/inspection seems that the problem resides in the recursion of `def meow` which is taking ages 
+    ```python
+    def meow(kittens_of_the_world):
+        """
+        meowwwwww meow
+        """
+        print('meowwww ', end='')
+        if kittens_of_the_world < UNITED:
+            return kittens_of_the_world
+        return meow(kittens_of_the_world - UNITE) + meow(kittens_of_the_world - UNITED)```
+    ```
+- altering the logic so that it uses just simple lookup cache speed up the processing enough to get to the actuall flag
+    ```python
+    cache = dict()
 
+    def meow(kittens_of_the_world):
+        """
+        meowwwwww meow
+        """
+        # print('meowwww ', end='')
+        if kittens_of_the_world < UNITED:
+            return kittens_of_the_world
+        if cache.get(kittens_of_the_world):
+            return cache[kittens_of_the_world]
+        res = meow(kittens_of_the_world - UNITE) + meow(kittens_of_the_world - UNITED)
+
+        cache[kittens_of_the_world] = res
+        return res
+    ```
+
+```bash
+echo 'kittens' | python3 ./meowmeow.py 
+```
 ---
 
 <details><summary>FLAG:</summary>
