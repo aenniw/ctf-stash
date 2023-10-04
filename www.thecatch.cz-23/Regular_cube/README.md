@@ -13,8 +13,10 @@ Download [regular_cube.zip](./regular_cube.zip ":ignore").\
 
 #### Solution:
 
-```bash
-```
+We are given `ZIP` with PDF containing regex crossword puzzle. Simply solving it gets us the FLAG:
+
+[regular_cube.pdf](./regular_cube.pdf ":ignore")
+
 
 ---
 
