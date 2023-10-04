@@ -54,7 +54,7 @@ Executing the `/makeCoffee/` method with this value returns the following respon
 ```json
 {
   "message": "Your Naval Espresso with rum is ready for pickup",
-  "validation_code": "Use this validation code FLAG{ccLH-dsaz-4kFA-P7GC}".
+  "validation_code": "Use this validation code FLAG{ccLH-dsaz-4kFA-P7GC}"
 }
 ```
 
