@@ -11,12 +11,55 @@ Coffee maker API is available at <a href="http://coffee-maker.cns-jv.tcc" target
 ---
 
 #### Solution:
+We were presented with a simple API server <a href="http://coffee-maker.cns-jv.tcc" target="_blank">http:&#47;&#47;coffee-maker.cns-jv.tcc</a>. After accessing it showed the following message
+```json
+{"status":"Coffemaker ready","msg":"Visit /docs for documentation"}
+```
+Based on the message above, we went to <a href="http://coffee-maker.cns-jv.tcc/docs" target="_blank">http:&#47;&#47;coffee-maker.cns-jv.tcc/docs</a> which made the Coffeemaker API available.
 
-```bash
+Firstly, we expanded the `/coffeeMenu`, then clicked on the `Try it out` and `Execute` buttons. This returned the following response:
+```json
+{
+  "Menu": [
+    {
+      "drink_name": "Espresso",
+      "drink_id": 456597044
+    },
+    {
+      "drink_name": "Lungo",
+      "drink_id": 354005463
+    },
+    {
+      "drink_name": "Capuccino",
+      "drink_id": 234357596
+    },
+    {
+      "drink_name": "Naval Espresso with rum",
+      "drink_id": 501176144
+    }
+  ]
+}
 ```
 
----
 
+As we need to prepare a **good** coffee for the captain, the only acceptable option from the coffee menu is the **Naval Espresso with rum**.
+Next, we examine the POST method `/makeCoffee/`, which takes `drink_id` as a value. We use the value for the **Naval Espresso with rum**.
+```json
+{
+  "drink_id": 501176144
+}
+```
+
+Executing the `/makeCoffee/` method with this value returns the following response which contains the FLAG
+```json
+{
+  "message": "Your Naval Espresso with rum is ready for pickup",
+  "validation_code": "Use this validation code FLAG{ccLH-dsaz-4kFA-P7GC}".
+}
+```
+
+
+---
 <details><summary>FLAG:</summary>
 
 ```
