@@ -10,8 +10,8 @@ Server: [index.js](./index.js ":ignore")
 
 We follow a chain of url slugs. Each slug either gives us a different slug to follow prefixed with "Go to " or the flag text.
 
-```py
-#! /usr/bin/python3
+```python
+#!/usr/bin/python3
 
 import requests
 
