@@ -14,6 +14,15 @@ Download [sonar_logs.zip](./sonar_logs.zip ":ignore").\
 #### Solution:
 
 ```bash
+{
+    while read p; do
+        echo "$p" | grep 0x >/dev/null || continue
+        time=${p% - *}
+        timestamp=${time% *}
+
+        echo "$(TZ=${time##* } date -d "${timestamp}" +"%s") $(echo ${p##* } | tr -d '()' | xxd -r -p)" 
+    done < sonar.log;
+} | sort -s -k 1 | cut -d' ' -f2 | tr -d '\n' ; echo;
 ```
 
 ---
