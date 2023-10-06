@@ -28,10 +28,6 @@
 
 # Ics
 
-## A_Different_Type_of_Serial_Key
-
-[A_Different_Type_of_Serial_Key](./A_Different_Type_of_Serial_Key/README.md ":include")
-
 ## A_Pain_in_the_BACnet
 
 [A_Pain_in_the_BACnet](./A_Pain_in_the_BACnet/README.md ":include")

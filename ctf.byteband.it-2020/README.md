@@ -22,23 +22,9 @@
 
 # misc
 
-## pwthon
-
-[pwthon](./pwthon/README.md ":include")
-
 ## string.equalsinteger
 
 [string.equalsinteger](./string.equalsinteger/README.md ":include")
-
-# pwn
-
-## fmt-me
-
-[fmt-me](./fmt-me/README.md ":include")
-
-## write
-
-[write](./write/README.md ":include")
 
 # reverse
 
