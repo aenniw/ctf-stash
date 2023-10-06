@@ -10,11 +10,13 @@ REVIEWER=$2
 git reset
 base=$(git rev-parse --abbrev-ref HEAD)
 for chal in $(git status . | grep modified | sed 's/.*modified:[ \t]*//g' | sed 's/\/.*$//g'); do
-    git branch "writeup/${chal// /-}"
-    git checkout "writeup/${chal// /-}"
+    branch=$(echo ${chal} | tr ' .' '-')
+
+    git branch "writeup/${branch}"
+    git checkout "writeup/${branch}"
     git add "./${chal}"
     git commit -S -m "Add ${CTF} - ${chal} writeup"
-    git push origin "writeup/${chal// /-}"
+    git push origin "writeup/${branch}"
 
     if hash gh 2>/dev/null; then
         issue=$(gh issue list -a @me -S "${chal}" | cut -f 1)
