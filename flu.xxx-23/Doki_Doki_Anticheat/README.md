@@ -13,8 +13,7 @@ I'd be really REALLY thankful if you'd do that!
 
 #### Solution:
 
-```bash
-```
+- after restoring the `savefile` in `~/.renpy` and loading it we are greeted with `anti-cheat` protection, poking around reveals that save file can be directly edited via [saveeditonline](https://www.saveeditonline.com/) and just adjusting the `anticheat` parameter to higher value resolves the issue
 
 ---
 
