@@ -52,6 +52,7 @@
 - ### [play.duc.tf - 2022](./play.duc.tf-22/README.md)
 - ### [student.ctf.su - 2021](./student.ctf.su-21/README.md)
 - ### [ctf.dicega.ng - 2022](./ctf.dicega.ng/README.md)
+- ### [flu.xxx - 2023](./flu.xxx-23/README.md)
 
 ## CTF dumping
 
