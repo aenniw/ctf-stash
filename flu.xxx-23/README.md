@@ -2,6 +2,12 @@
 
 ---
 
+# Crypto
+
+## Lucky numbers
+
+[Lucky_numbers](./Lucky_numbers/README.md ":include")
+
 # Web
 
 ## Based Encoding
