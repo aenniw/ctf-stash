@@ -2,6 +2,8 @@
 
 ## CTF Events
 
+### 2026
+- #### [thecatch.cz](./2026/www.thecatch.cz/README.md)
 ### 2023
 - #### [thecatch.cz](./2023/www.thecatch.cz/README.md)
 - #### [challenges.reply.com](./2023/challenges.reply.com/README.md)
