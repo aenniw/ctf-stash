@@ -33,6 +33,16 @@
         search: {
           depth: 5
         },
+        markdown: {
+          renderer: {
+            code({ text, lang }) {
+              if (lang === 'math') {
+                return /* html */ `<div>${MathJax.tex2mml(text)}</div>`;
+              }
+              return this.origin.code.apply(this, arguments);
+            },
+          },
+        },
       };
     </script>
 
@@ -40,6 +50,7 @@
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
 
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>

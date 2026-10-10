@@ -10,39 +10,59 @@ We are given `Python` source code to the messaging server. When the server start
 
 We know that the flag's plaintext `m` was `encrypted` to ciphertext `c` using classic textbook RSA:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=c = m^e ( mod N )"></center>
+```math
+c = m^e ( mod N )
+```
 
 And we know the `decryption` process with private key `d` (which we don't have) looks like this:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m = c^d ( mod N )"></center>
+```math
+m = c^d ( mod N )
+```
 
 Now to the `attack` part. If we choose appropriate plaintext `m'` let's say `m' = 2` and encrypt it we get (chosen) ciphertext `c'`:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=c^' = {m^'}^e ( mod N )"></center>
+```math
+c' = {m'}^e ( mod N )
+```
 
 Now we compute tampered ciphertext `c''` by multiplying the original flag's ciphertext with our chosen ciphertext:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=c^'' = c * c^' ( mod N )"></center>
+```math
+c'' = c * c' ( mod N )
+```
 
 And use the server to decrypt it to get tampered plaintext `m''`:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m^'' = {c^''}^d ( mod N )"></center>
+```math
+m'' = {c''}^d ( mod N )
+```
 
 Using the equations above:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m^'' = (c * c^') ^d ( mod N )"></center>
+```math
+m'' = (c * c') ^d ( mod N )
+```
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m^'' = (c^d)* ({c^'}^d)( mod N )"></center>
+```math
+m'' = (c^d)* ({c'}^d)( mod N )
+```
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m^'' = m* m^' ( mod N )"></center>
+```math
+m'' = m* m' ( mod N )
+```
 
 Now we want to solve for:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m = m^''/ m^' ( mod N )"></center>
+```math
+m = m''/ m' ( mod N )
+```
 
 If we set for `m'`  the original chosen value `2` we ("undo the tampering" and) get original flag's plaintext `m`:
 
-<center><img src="https://render.githubusercontent.com/render/math?math=m = m^''/ 2 ( mod N )"></center>
+```math
+m = m''/ 2 ( mod N )
+```
 
 
 ```python
