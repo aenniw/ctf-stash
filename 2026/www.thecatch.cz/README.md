@@ -74,16 +74,6 @@
 
 [Chapter_4_Raggad](./Chapter_4_Raggad/README.md ":include")
 
-# The_Story
-
-## Introduction
-
-[Introduction](./Introduction/README.md ":include")
-
-## Promotion
-
-[Promotion](./Promotion/README.md ":include")
-
 # They_Lie_to_You!
 
 ## Chapter_1_Exploration
