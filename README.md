@@ -1,68 +1,8 @@
 # CTF-Stash
 
-## CTF Events
+## CTF Toolkits
 
-### 2026
-- #### [thecatch.cz](./2026/www.thecatch.cz/README.md)
-### 2023
-- #### [thecatch.cz](./2023/www.thecatch.cz/README.md)
-- #### [challenges.reply.com](./2023/challenges.reply.com/README.md)
-- #### [ctf.thefewchosen.com](./2023/ctf.thefewchosen.com/README.md)
-- #### [utctf.live](./2023/utctf/README.md)
-- #### [2023.angstromctf.com](./2023/angstromctf.com/README.md)
-- #### [flu.xxx](./2023/flu.xxx/README.md)
-### 2022
-- #### [thecatch.cz](./2022/www.thecatch.cz/README.md)
-- #### [challenges.reply.com](./2022/challenges.reply.com/README.md)
-- #### [ctf.thefewchosen.com](./2022/ctf.thefewchosen.com/README.md)
-- #### [utctf.live](./2022/utctf/README.md)
-- #### [ctf.wpictf.xyz](./2022/ctf.wpictf.xyz/README.md)
-- #### [play.duc.tf](./2022/play.duc.tf/README.md)
-- #### [angstromctf.com](./2022/angstromctf.com/README.md)
-- #### [ctf.dicega.ng](./2022/ctf.dicega.ng/README.md)
-### 2021
-- #### [thecatch.cz](./2021/www.thecatch.cz/README.md)
-- #### [challenges.reply.com](./2021/challenges.reply.com/README.md)
-- #### [aeroctf.com](./2021/aero-ctf/README.md)
-- #### [utctf.live](./2021/utctf/README.md)
-- #### [ctfsecurinets.com](./2021/ctfsecurinets-com/README.md)
-- #### [ctf.wpictf.xyz](./2021/ctf.wpictf.xyz/README.md)
-- #### [ctf.csaw.io](./2021/ctf.csaw.io/README.md)
-- #### [play.duc.tf](./2021/play.duc.tf/README.md)
-- #### [angstromctf.com](./2021/angstromctf.com/README.md)
-- #### [student.ctf.su](./2021/student.ctf.su/README.md)
-### 2020
-- #### [thecatch.cz](./2020/www.thecatch.cz/README.md)
-- #### [challenges.reply.com](./2020/challenges.reply.com/README.md)
-- #### [aeroctf.com](./2020/aero-ctf/README.md)
-- #### [utctf.live](./2020/utctf/README.md)
-- #### [ctfsecurinets.com](./2020/ctfsecurinets-com/README.md)
-- #### [ctf.wpictf.xyz](./2020/ctf.wpictf.xyz/README.md)
-- #### [ctf.spamandhex.com](./2020/ctf.spamandhex.com/README.md)
-- #### [ctf.byteband.it](./2020/ctf.byteband.it/README.md)
-- #### [bsidesbos.ctf.games](./2020/bsidesbos/README.md)
-- #### [venividivici.iitdh.ac.in](./2020/venividivici.iitdh.ac.in/README.md)
-- #### [tuctf.com](./2020/tuctf.com/README.md)
-### 2019
-- #### [thecatch.cz](./2019/www.thecatch.cz/README.md)
-- #### [challenges.reply.com](./2019/challenges.reply.com/README.md)
-- #### [ctf.ritsec.club](./2019/ritsec_ctf/README.md)
-- #### [try2hack.me](./2019/try2hack.me/README.md)
-- #### [forensic-night.cesnet.cz](./2019/forensic-night.cesnet.cz/README.md)
-- #### [ctf.dragonsector.pl](./2019/ctf.dragonsector.pl/README.md)
-- #### [affinityctf.com](./2019/affinityctf.com/README.md)
-- #### [nactf.com](./2019/nactf.com/README.md)
-### 2018
-- #### [catch the qubit](./2018/catch-the-qubit/README.md)
-- #### [hackcon.online](./2019/hackcon.online/README.md)
-- #### thecatch.cz
-  - [Practice Challenges](./2018/www.thecatch.cz/round-0/README.md)
-  - [Round - 1](./2018/www.thecatch.cz/round-1/README.md)
-  - [Round - 2 (leaked)](./2018/www.thecatch.cz/round-2-leaked/README.md)
-  - [Round - 2](./2018/www.thecatch.cz/round-2/README.md)
-
-### Other
-- #### [tryhackme.com](./tryhackme.com/README.md)
+[CTF-tools.md](./CTF-tools.md ":include")
 
 ## CTF dumping
 
@@ -71,10 +11,6 @@
 ```
 
 External tools [CTFdScraper](https://github.com/ichinano/CTFdScraper) [CTFDump](https://github.com/realgam3/CTFDump)
-
-## CTF Toolkits
-
-[CTF-tools.md](./CTF-tools.md ":include")
 
 ## Resources
 
